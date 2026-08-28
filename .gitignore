@@ -23,3 +23,7 @@ pnpm-debug.log*
 # system files
 .DS_Store
 Thumbs.db
+
+# local Next.js development logs
+.next-dev.log
+.next-dev.err.log
