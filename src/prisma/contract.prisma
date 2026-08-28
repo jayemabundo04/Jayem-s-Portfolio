@@ -1,41 +1,41 @@
 model Project {
-  id          Int      @id @default(autoincrement())
+  id          Int               @id @default(autoincrement())
   title       String
-  slug        String   @unique
+  slug        String            @unique
   description String
   image       String?
   githubUrl   String?
   liveUrl     String?
-  featured    Boolean  @default(false)
-  createdAt   TimestamptzString @default(now())
-  updatedAt   temporal.updatedAtString()
+  featured    Boolean           @default(false)
+  createdAt   TimestamptzString  @default(now())
+  updatedAt   TimestamptzString  @default(now())
 }
 
 model Experience {
-  id          Int      @id @default(autoincrement())
+  id          Int               @id @default(autoincrement())
   company     String
   position    String
   description String
-  startDate   DateTime
-  endDate     DateTime?
-  current     Boolean  @default(false)
+  startDate   TimestamptzString
+  endDate     TimestamptzString?
+  current     Boolean           @default(false)
   createdAt   TimestamptzString @default(now())
-  updatedAt   temporal.updatedAtString()
+  updatedAt   TimestamptzString @default(now())
 }
 
 model Message {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String
-  subject   String?
-  message   String
-  read      Boolean  @default(false)
+  id         Int               @id @default(autoincrement())
+  name       String
+  email      String
+  subject    String?
+  message    String
+  read       Boolean           @default(false)
   createdAt  TimestamptzString @default(now())
 }
 
 model Admin {
-  id           Int      @id @default(autoincrement())
-  email        String   @unique
+  id           Int               @id @default(autoincrement())
+  email        String            @unique
   passwordHash String
   createdAt    TimestamptzString @default(now())
 }
