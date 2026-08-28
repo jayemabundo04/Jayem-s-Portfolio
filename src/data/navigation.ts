@@ -10,14 +10,14 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "Work",
-    href: "/#work-preview"
+    href: "/projects"
   },
   {
     label: "Approach",
-    href: "/#approach"
+    href: "/about"
   },
   {
     label: "Contact",
-    href: "/#contact-preview"
+    href: "/contact"
   }
 ];
