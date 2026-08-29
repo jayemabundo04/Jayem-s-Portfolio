@@ -55,3 +55,25 @@ a {
   outline: 2px solid #2f6f5e;
   outline-offset: 2px;
 }
+.hero-name {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: heroNameReveal 0.7s ease-out forwards;
+}
+
+.hero-name-delay {
+  animation-delay: 0.15s;
+}
+
+@keyframes heroNameReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -10,6 +10,6 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/jayemabundo04"
+    href: "https://www.linkedin.com/in/jose-martin-cubilla-abundo-jr-a07bb33a9/"
   }
 ];
