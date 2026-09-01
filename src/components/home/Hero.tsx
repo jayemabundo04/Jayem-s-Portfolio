@@ -9,22 +9,22 @@ import { socialLinks } from "@/data/social-links";
 
 const stats = [
   {
-    icon: "/images/icons/progcon.png",
+    icon: "/images/icon/progcon.png",
     value: "5+",
     label: "Projects Completed",
   },
   {
-    icon: "/images/icons/experience.svg",
+    icon: "/images/icon/exp.png",
     value: "1+",
     label: "Years Experience",
   },
   {
-    icon: "/images/icons/education.svg",
+    icon: "/images/icon/course.png",
     value: "BIT",
     label: "Computer Technology",
   },
   {
-    icon: "/images/icons/learning.svg",
+    icon: "/images/icon/learn.png",
     value: "Ongoing",
     label: "Always Learning",
   },
@@ -196,15 +196,15 @@ useEffect(() => {
     className="rounded-lg border border-white/10 bg-white/[0.02] px-4 py-3 backdrop-blur-sm"
   >
     <div className="flex items-center gap-3">
-      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-500/10">
-        <Image
-          src={stat.icon}
-          alt=""
-          width={20}
-          height={20}
-          className="object-contain"
-        />
-      </div>
+      <div className="flex shrink-0 items-center justify-center">
+  <Image
+    src={stat.icon}
+    alt=""
+    width={40}
+    height={40}
+    className="object-contain"
+  />
+</div>
 
       <div>
         <p className="text-lg font-semibold text-white">
@@ -238,7 +238,7 @@ useEffect(() => {
           {/* Profile */}
           <div className="relative z-10 mt-4 h-[32rem] w-full max-w-[27rem]">
             <Image
-              src="/images/prof.png"
+              src="/images/icon/profile.png"
               alt="Portrait of Jose Martin C. Abundo Jr."
               fill
               priority
