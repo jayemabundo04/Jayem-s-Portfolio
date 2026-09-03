@@ -10,7 +10,7 @@ const snowflakes = Array.from({ length: 70 }, (_, index) => ({
 export function Snowfall() {
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-[60] overflow-hidden"
+     className="pointer-events-none fixed inset-0 z-30 overflow-hidden"
       aria-hidden="true"
     >
       {snowflakes.map((snow) => (
