@@ -66,14 +66,58 @@ a {
   animation-delay: 0.15s;
 }
 
-@keyframes heroNameReveal {
+@keyframes heroProfileFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heroProfileGlow {
+  0%,
+  100% {
+    transform: scale(0.96);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.75;
+  }
+}
+
+@keyframes heroTechReveal {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(24px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.hero-profile-float {
+  animation: heroProfileFloat 5s ease-in-out infinite;
+}
+
+.hero-profile-glow {
+  animation: heroProfileGlow 4s ease-in-out infinite;
+}
+
+.hero-tech-reveal {
+  animation: heroTechReveal 0.9s ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-profile-float,
+  .hero-profile-glow,
+  .hero-tech-reveal {
+    animation: none;
   }
 }

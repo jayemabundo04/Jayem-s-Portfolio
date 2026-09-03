@@ -165,28 +165,48 @@ export function Hero() {
           </div>
 
        {/* RIGHT SIDE - TECH STACK IMAGE */}
+{/* RIGHT SIDE */}
 <div className="relative z-10 flex w-full justify-center lg:justify-end">
   <div className="relative w-full max-w-[42rem]">
 
+    {/* Profile Glow */}
     <div
-      className="absolute -inset-8 rounded-3xl bg-violet-600/15 blur-3xl"
+      className="hero-profile-glow absolute left-1/2 top-[-4rem] h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-600/60 via-indigo-600/40 to-blue-500/20 blur-3xl"
       aria-hidden="true"
     />
 
-    <Image
-      src="/images/projects/techuse.png"
-      alt="Technology stack: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma"
-      width={758}
-      height={137}
-      sizes="(max-width: 1024px) 100vw, 42rem"
-      className="relative h-auto w-full object-contain mix-blend-screen"
-      priority
+    <div
+      className="hero-profile-glow absolute left-1/2 top-[-2rem] h-[18rem] w-[18rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-500/30 via-indigo-500/20 to-transparent blur-2xl"
+      aria-hidden="true"
     />
 
-  </div>
+    {/* Profile */}
+    <div className="hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[23rem] w-[19rem] sm:h-[26rem] sm:w-[21rem]">
+      <Image
+        src="/images/icon/profile.png"
+        alt="Jose Martin C. Abundo Jr."
+        fill
+        priority
+        sizes="(max-width: 1024px) 21rem, 23rem"
+        className="object-contain object-bottom"
+      />
+    </div>
 
+    {/* Tech Stack Image */}
+    <div className="hero-tech-reveal relative z-10">
+      <Image
+        src="/images/projects/techus.png"
+        alt="Technology stack: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma"
+        width={758}
+        height={137}
+        sizes="(max-width: 1024px) 100vw, 42rem"
+        className="h-auto w-full object-contain"
+      />
+    </div>
+
+  </div>
 </div>
-      </div>
+</div>
     </div>
   </section>
   );
