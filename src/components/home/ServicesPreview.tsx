@@ -87,7 +87,7 @@ export function ServicesPreview() {
         {snowflakes.map((snow) => (
           <span
   key={snow.id}
-  className="absolute -top-4 animate-[snowfall_linear_infinite] rounded-full bg-white"
+  className="christmas-snow absolute -top-4 rounded-full bg-white"
   style={{
     left: snow.left,
     width: snow.size,

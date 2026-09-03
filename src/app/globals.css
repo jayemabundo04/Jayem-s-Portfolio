@@ -135,3 +135,44 @@ a {
     transform: translate3d(-12px, 105vh, 0);
   }
 }
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -20px, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, 50vh, 0);
+  }
+
+  100% {
+    transform: translate3d(-12px, 105vh, 0);
+  }
+}
+
+@keyframes snowDrift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(12px);
+  }
+}
+
+.christmas-snow {
+  animation-name: snowfall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.snow-drift {
+  animation: snowDrift 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .christmas-snow,
+  .snow-drift {
+    animation: none;
+  }
+}
