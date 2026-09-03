@@ -164,34 +164,31 @@ export function Hero() {
 
           </div>
 
-          {/* RIGHT SIDE - TECH STACK IMAGE */}
-          <div className="relative z-10 flex w-full justify-center lg:justify-end">
-            <div className="relative w-full max-w-[42rem]">
+       {/* RIGHT SIDE - TECH STACK IMAGE */}
+<div className="relative z-10 flex w-full justify-center lg:justify-end">
+  <div className="relative w-full max-w-[42rem]">
 
-              {/* Purple Glow */}
-              <div
-                className="absolute -inset-8 rounded-3xl bg-violet-600/15 blur-3xl"
-                aria-hidden="true"
-              />
+    <div
+      className="absolute -inset-8 rounded-3xl bg-violet-600/15 blur-3xl"
+      aria-hidden="true"
+    />
 
-              {/* Tech Stack Card */}
-              <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#080c15]/75 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+    <Image
+      src="/images/projects/techuse.png"
+      alt="Technology stack: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma"
+      width={758}
+      height={137}
+      sizes="(max-width: 1024px) 100vw, 42rem"
+      className="relative h-auto w-full object-contain mix-blend-screen"
+      priority
+    />
 
-                <Image
-                  src="/images/tech-stack.png"
-                  alt="Technologies used by Jose Martin C. Abundo Jr.: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma"
-                  width={921}
-                  height={182}
-                  sizes="(max-width: 1024px) 100vw, 42rem"
-                  className="h-auto w-full object-contain"
-                />
+  </div>
 
-              </div>
-            </div>
-          </div>
-
-        </div>
+</div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
+ 
