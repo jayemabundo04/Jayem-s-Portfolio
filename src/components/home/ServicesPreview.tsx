@@ -63,14 +63,7 @@ const services = [
   },
 ];
 
-const snowflakes = Array.from({ length: 45 }, (_, index) => ({
-  id: index,
-  left: `${(index * 37) % 100}%`,
-  delay: `${(index * 0.43) % 8}s`,
-  duration: `${6 + ((index * 1.7) % 6)}s`,
-  size: `${2 + ((index * 3) % 5)}px`,
-  opacity: `${0.25 + ((index * 13) % 50) / 100}`,
-}));
+
 
 export function ServicesPreview() {
   return (
@@ -79,26 +72,7 @@ export function ServicesPreview() {
       aria-labelledby="what-i-do-title"
       className="relative overflow-hidden border-b border-white/[0.06] bg-[#070a12] py-20 sm:py-24"
     >
-      {/* Christmas Snow */}
-      <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
-      >
-        {snowflakes.map((snow) => (
-          <span
-  key={snow.id}
-  className="christmas-snow absolute -top-4 rounded-full bg-white"
-  style={{
-    left: snow.left,
-    width: snow.size,
-    height: snow.size,
-    opacity: snow.opacity,
-    animationDelay: snow.delay,
-    animationDuration: snow.duration,
-  }}
-/>
-        ))}
-      </div>
+     
 
       {/* Soft Christmas Glow */}
       <div

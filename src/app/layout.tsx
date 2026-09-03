@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-
+import { Snowfall } from "@/components/layout/Snowfall";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 
@@ -38,13 +38,18 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
   return (
     <html lang="en">
       <body>
-        <a className="skip-link" href="#main-content">
-          Skip to content
-        </a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
-      </body>
+  <Snowfall />
+
+  <a className="skip-link" href="#main-content">
+    Skip to content
+  </a>
+
+  <Navbar />
+
+  <main id="main-content">{children}</main>
+
+  <Footer />
+</body>
     </html>
   );
 }
