@@ -181,16 +181,16 @@ export function Hero() {
     />
 
     {/* Profile */}
-    <div className="hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[23rem] w-[19rem] sm:h-[26rem] sm:w-[21rem]">
-      <Image
-        src="/images/icon/profile.png"
-        alt="Jose Martin C. Abundo Jr."
-        fill
-        priority
-        sizes="(max-width: 1024px) 21rem, 23rem"
-        className="object-contain object-bottom"
-      />
-    </div>
+    <div className="hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem] -translate-y-8">
+  <Image
+    src="/images/icon/profile.png"
+    alt="Jose Martin C. Abundo Jr."
+    fill
+    priority
+    sizes="(max-width: 1024px) 24rem, 27rem"
+    className="object-contain object-bottom"
+  />
+</div>
 
     {/* Tech Stack Image */}
     <div className="hero-tech-reveal relative z-10">

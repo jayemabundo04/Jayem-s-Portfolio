@@ -117,7 +117,21 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .hero-profile-float,
   .hero-profile-glow,
-  .hero-tech-reveal {
+  .hero-tech-reveal,
+  .christmas-snow {
     animation: none;
+  }
+}
+@keyframes snowfall {
+  0% {
+    transform: translate3d(0, -20px, 0);
+  }
+
+  50% {
+    transform: translate3d(18px, 50vh, 0);
+  }
+
+  100% {
+    transform: translate3d(-12px, 105vh, 0);
   }
 }
