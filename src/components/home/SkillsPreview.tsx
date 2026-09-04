@@ -16,33 +16,44 @@ export function SkillsPreview() {
 
       <div className="relative mx-auto w-full max-w-7xl">
         {/* Small label */}
-        <div className="mb-7 px-5 text-center sm:px-8 lg:px-10">
+        <div className="mb-10 px -40 text-center sm:px-8 lg:px-10">
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500">
             Technologies I Work With
           </p>
         </div>
 
         {/* Carousel viewport */}
-        <div className="relative overflow-hidden">
-          {/* Left fade */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-[#070a12] to-transparent sm:w-28"
-          />
+       {/* Carousel viewport */}
+<div className="relative overflow-hidden">
+  {/* Left fade */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-[#070a12] to-transparent sm:w-28"
+  />
 
-          {/* Right fade */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-[#070a12] to-transparent sm:w-28"
-          />
+  {/* Right fade */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-[#070a12] to-transparent sm:w-28"
+  />
 
-          {/* Moving track */}
-          <div className="tech-marquee-track flex w-max">
-            <SkillGroup group="primary" />
+  {/* Center spotlight / flashlight */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute left-1/2 top-0 z-10 h-full w-40 -translate-x-1/2 bg-gradient-to-b from-white/20 via-violet-400/20 to-transparent blur-2xl sm:w-56"
+  />
 
-            <SkillGroup group="duplicate" ariaHidden />
-          </div>
-        </div>
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-2xl sm:h-36 sm:w-36"
+  />
+
+  {/* Moving track */}
+  <div className="tech-marquee-track flex w-max">
+    <SkillGroup group="primary" />
+    <SkillGroup group="duplicate" ariaHidden />
+  </div>
+</div>
       </div>
     </section>
   );

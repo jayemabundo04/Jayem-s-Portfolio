@@ -31,6 +31,11 @@ export const skills: Skill[] = [
     icon: "/images/icon/Java.png",
   },
   {
+    id: "figma",
+    name: "Figma",
+    icon: "/images/icon/Figma.png",
+  },
+  {
     id: "javascript",
     name: "JavaScript",
     icon: "/images/icon/JavaScript.png",
