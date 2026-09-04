@@ -83,13 +83,25 @@ export function Hero() {
       className="hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white"
     >
       {/* Background */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10"
-        aria-hidden="true"
-      >
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.98)_0%,rgba(5,7,13,0.9)_35%,rgba(5,7,13,0.62)_65%,rgba(5,7,13,0.82)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,13,0.98)_0%,transparent_45%,rgba(5,7,13,0.3)_100%)]" />
-      </div>
+     {/* Background */}
+<div
+  className="pointer-events-none absolute inset-0 -z-10"
+  aria-hidden="true"
+>
+  <Image
+    src="/images/projects/home.png"
+    alt=""
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center"
+  />
+
+  {/* Dark overlay for text readability */}
+  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.96)_0%,rgba(5,7,13,0.82)_32%,rgba(5,7,13,0.42)_68%,rgba(5,7,13,0.68)_100%)]" />
+
+  <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,13,0.92)_0%,transparent_45%,rgba(5,7,13,0.25)_100%)]" />
+</div>
 
       {/* Main Container */}
       <div className="mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-7xl items-center px-5 py-12 sm:px-8 lg:px-10">
