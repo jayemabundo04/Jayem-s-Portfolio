@@ -35,14 +35,6 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         aria-hidden="true"
       >
-        <Image
-          src="/images/hero.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
 
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.98)_0%,rgba(5,7,13,0.9)_35%,rgba(5,7,13,0.62)_65%,rgba(5,7,13,0.82)_100%)]" />
 
