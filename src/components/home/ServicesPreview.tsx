@@ -63,17 +63,13 @@ const services = [
   },
 ];
 
-
-
 export function ServicesPreview() {
   return (
     <section
       id="what-i-do"
       aria-labelledby="what-i-do-title"
-      className="relative overflow-hidden border-b border-white/[0.06] bg-[#070a12] py-20 sm:py-24"
+      className="relative overflow-hidden border-b border-white/[0.06] bg-[#070a12] pb-20 pt-16 sm:pb-24 sm:pt-20"
     >
-     
-
       {/* Soft Christmas Glow */}
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-600/10 blur-3xl"
@@ -92,8 +88,18 @@ export function ServicesPreview() {
 
       {/* Content */}
       <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
-        {/* Heading */}
+        {/* Transition title centered between the technologies and services sections */}
         <div className="mx-auto max-w-2xl text-center">
+          <h2
+            id="what-i-do-title"
+            className="text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl"
+          >
+            Building solutions from idea to execution.
+          </h2>
+        </div>
+
+        {/* What I Do heading */}
+        <div className="mx-auto mt-16 max-w-2xl text-center sm:mt-20">
           <div className="mb-3 flex items-center justify-center gap-2">
             <span className="h-px w-8 bg-gradient-to-r from-transparent to-red-400/60" />
 
@@ -103,13 +109,6 @@ export function ServicesPreview() {
 
             <span className="h-px w-8 bg-gradient-to-l from-transparent to-emerald-400/60" />
           </div>
-
-          <h2
-            id="what-i-do-title"
-            className="text-2xl font-semibold tracking-[-0.025em] text-white sm:text-3xl"
-          >
-            Building solutions from idea to execution.
-          </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-400">
             I combine development, technical problem solving, and practical
@@ -164,9 +163,6 @@ export function ServicesPreview() {
           ))}
         </div>
       </div>
-
-      {/* Snow Animation */}
-      
     </section>
   );
 }
