@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,8 +31,31 @@ const stats = [
 ];
 
 export function Hero() {
-  return (
-    <section className="relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white">
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        hero.classList.toggle("is-visible", entry.isIntersecting);
+      },
+      {
+        threshold: 0.18,
+      }
+    );
+
+    observer.observe(hero);
+
+    return () => observer.disconnect();
+  }, []);
+    return (
+<section
+  ref={heroRef}
+  className="hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white"
+>
       {/* Background */}
       <div
         className="pointer-events-none absolute inset-0 -z-10"
@@ -49,32 +75,32 @@ export function Hero() {
           <div className="relative z-10 max-w-3xl">
 
             {/* Role */}
-            <div className="mb-5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
+              <div className="hero-reveal hero-reveal-1 mb-5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
               <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_16px_rgba(167,139,250,0.9)]" />
 
               Junior Web Developer
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
-              I build web experiences
-              <br className="hidden sm:block" />
+           <h1 className="hero-reveal hero-reveal-2 text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
+  I build web experiences
+  <br className="hidden sm:block" />
 
-              that{" "}
-              <span className="bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
-                solve real problems.
-              </span>
-            </h1>
+  that{" "}
+  <span className="hero-highlight bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
+    solve real problems.
+  </span>
+</h1>
 
             {/* Description */}
-            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+<p className="hero-reveal hero-reveal-3 mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
               I&apos;m Jose Martin C. Abundo Jr., a Computer Technology
               graduate focused on building clean, responsive, and
               user-friendly web applications.
             </p>
 
             {/* CTA Buttons */}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="hero-reveal hero-reveal-4 mt-8 flex flex-wrap gap-3">
               <ButtonLink
                 href="#work-preview"
                 variant="inverse"
@@ -107,7 +133,7 @@ export function Hero() {
             </div>
 
             {/* Social Links */}
-            <div className="mt-7 flex items-center gap-2">
+            <div className="hero-reveal hero-reveal-5 mt-7 flex items-center gap-2">
               {socialLinks.map((link) => (
                 <Link
                   href={link.href}
@@ -123,7 +149,7 @@ export function Hero() {
             </div>
 
             {/* Stats */}
-            <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+            <div className="hero-reveal hero-reveal-6 mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
@@ -173,8 +199,7 @@ export function Hero() {
     />
 
     {/* Profile */}
-    <div className="hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem] -translate-y-8">
-  <Image
+<div className="hero-profile-reveal hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem]">  <Image
     src="/images/icon/profile.png"
     alt="Jose Martin C. Abundo Jr."
     fill
