@@ -78,12 +78,14 @@ export function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="hero-reveal hero-reveal-2 text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
-              I build web experiences
+            <h1 className="hero-heading hero-reveal hero-reveal-2 text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
+              <span className="hero-line hero-line-1">I build web experiences</span>
               <br className="hidden sm:block" />
-              that{" "}
-              <span className="hero-highlight bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
-                solve real problems.
+              <span className="hero-line hero-line-2">
+                that{" "}
+                <span className="hero-highlight bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
+                  solve real problems.
+                </span>
               </span>
             </h1>
 
