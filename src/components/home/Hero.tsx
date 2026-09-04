@@ -111,7 +111,7 @@ export function Hero() {
             {/* Role */}
             <div className="hero-reveal hero-reveal-1 mb-5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
               <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_16px_rgba(167,139,250,0.9)]" />
-              Junior Web Developer
+              Full Stack Web Developer
             </div>
 
             {/* Heading */}
