@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,31 +31,37 @@ const stats = [
 ];
 
 export function Hero() {
-  const heroRef = useRef<HTMLElement>(null);
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
 
   useEffect(() => {
-    const hero = heroRef.current;
+    const heading = headingRef.current;
 
-    if (!hero) return;
+    if (!heading) return;
 
+    const visibilityThreshold = 0.2;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        hero.classList.toggle("is-visible", entry.isIntersecting);
+        setIsHeroVisible(
+          entry.isIntersecting &&
+            entry.intersectionRatio >= visibilityThreshold
+        );
       },
       {
-        threshold: 0.18,
+        threshold: [0, visibilityThreshold],
       }
     );
 
-    observer.observe(hero);
+    observer.observe(heading);
 
     return () => observer.disconnect();
   }, []);
 
   return (
     <section
-      ref={heroRef}
-      className="hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white"
+      className={`hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white${
+        isHeroVisible ? " is-visible" : ""
+      }`}
     >
       {/* Background */}
       <div
@@ -78,20 +84,27 @@ export function Hero() {
             </div>
 
             {/* Heading */}
-            <h1 className="hero-heading hero-reveal hero-reveal-2 text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
-              <span className="hero-line hero-line-1">I build web experiences</span>
-              <br className="hidden sm:block" />
-              <span className="hero-line hero-line-2">
-                that{" "}
-                <span className="hero-highlight bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
-                  solve real problems.
-                </span>
+            <h1
+              ref={headingRef}
+              className="hero-heading text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]"
+            >
+              <span className="hero-heading-part hero-heading-part-1">
+                I build web experiences
+              </span>
+              <br className="hidden sm:block" />{" "}
+              <span className="hero-heading-part hero-heading-part-2">
+                that
+              </span>{" "}
+              <span className="hero-heading-part hero-heading-part-3 bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
+                solve real problems.
               </span>
             </h1>
 
             {/* Description */}
-            <p className="hero-reveal hero-reveal-3 mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-              I&apos;m Jose Martin C. Abundo Jr., a Computer Technology graduate focused on building clean, responsive, and user-friendly web applications.
+            <p className="hero-description-reveal mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              I&apos;m Jose Martin C. Abundo Jr., a Computer Technology graduate
+              focused on building clean, responsive, and user-friendly web
+              applications.
             </p>
 
             {/* CTA Buttons */}
@@ -180,15 +193,17 @@ export function Hero() {
               />
 
               {/* Profile */}
-              <div className="hero-profile-reveal hero-profile-float relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem]">
-                <Image
-                  src="/images/icon/profile.png"
-                  alt="Jose Martin C. Abundo Jr."
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 24rem, 27rem"
-                  className="object-contain object-bottom"
-                />
+              <div className="hero-profile-reveal relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem]">
+                <div className="hero-profile-float relative h-full w-full">
+                  <Image
+                    src="/images/icon/profile.png"
+                    alt="Jose Martin C. Abundo Jr."
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 24rem, 27rem"
+                    className="object-contain object-bottom"
+                  />
+                </div>
               </div>
 
               {/* Tech Stack Image */}
