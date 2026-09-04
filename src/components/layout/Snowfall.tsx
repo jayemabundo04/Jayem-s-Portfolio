@@ -31,10 +31,10 @@ export function Snowfall() {
       ))}
 
       <img
-        src="/images/snowman-peek.svg"
+        src="/images/snowman-peek.webp"
         alt=""
         draggable={false}
-        className="snow-drift absolute bottom-2 -right-16 w-40 select-none drop-shadow-[0_10px_20px_rgba(15,23,42,0.18)] sm:-right-20 sm:w-52 md:-right-24 md:w-64"
+        className="absolute right-0 top-1/2 w-28 -translate-y-1/2 translate-x-[38%] select-none drop-shadow-[0_10px_22px_rgba(15,23,42,0.22)] sm:w-36 md:w-44 lg:w-52"
       />
     </div>
   );
