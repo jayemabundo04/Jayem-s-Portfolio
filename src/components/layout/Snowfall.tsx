@@ -31,11 +31,11 @@ export function Snowfall() {
       ))}
 
       <img
-        src="/images/snowman-peek.webp"
-        alt=""
-        draggable={false}
-        className="absolute right-0 top-1/2 w-28 -translate-y-1/2 translate-x-[38%] select-none drop-shadow-[0_10px_22px_rgba(15,23,42,0.22)] sm:w-36 md:w-44 lg:w-52"
-      />
+  src="/images/snowman-peek.webp"
+  alt=""
+  draggable={false}
+  className="absolute right-0 top-1/2 w-28 -translate-y-1/2 select-none object-contain drop-shadow-[0_10px_22px_rgba(15,23,42,0.22)] sm:w-36 md:w-44 lg:w-52 xl:w-60"
+/>
     </div>
   );
 }

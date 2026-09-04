@@ -164,3 +164,34 @@ a {
     animation: none;
   }
 }
+/* ========================================
+   Tech Stack Infinite Marquee
+======================================== */
+
+@keyframes techMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tech-marquee-track {
+  animation: techMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+/*
+.tech-marquee-track:hover {
+  animation-play-state: paused;
+}
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-marquee-track {
+    animation: techMarquee 22s linear infinite;
+    transform: none;
+  }
+}
