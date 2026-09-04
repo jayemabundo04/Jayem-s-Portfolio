@@ -102,118 +102,91 @@ a {
 .hero-profile-reveal,
 .hero-tech-reveal {
   opacity: 0;
+  filter: blur(6px);
+  transform: translate3d(0, 18px, 0);
+  transition-property: opacity, transform, filter;
+  transition-duration: 760ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
 }
 
 .hero-heading-part {
   display: inline-block;
-  transform: translate3d(0, 16px, 0);
-  filter: blur(6px);
-  will-change: opacity, transform, filter;
+  transform: translate3d(0, 14px, 0);
 }
 
-.hero-description-reveal,
-.hero-reveal,
-.hero-profile-reveal,
+.hero-profile-reveal {
+  transform: translate3d(0, 24px, 0) scale(0.97);
+}
+
 .hero-tech-reveal {
-  transform: translate3d(0, 18px, 0);
-  filter: blur(6px);
-  will-change: opacity, transform, filter;
+  transform: translate3d(0, 18px, 0) scale(0.985);
 }
 
-@keyframes heroRevealUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 18px, 0);
-    filter: blur(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
+.hero-section[data-visible="true"] .hero-reveal,
+.hero-section[data-visible="true"] .hero-description-reveal,
+.hero-section[data-visible="true"] .hero-heading-part,
+.hero-section[data-visible="true"] .hero-profile-reveal,
+.hero-section[data-visible="true"] .hero-tech-reveal {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0);
 }
 
-@keyframes heroHeadingReveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 16px, 0);
-    filter: blur(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
+.hero-section[data-visible="true"] .hero-profile-reveal,
+.hero-section[data-visible="true"] .hero-tech-reveal {
+  transform: translate3d(0, 0, 0) scale(1);
 }
 
-@keyframes heroProfileReveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 28px, 0) scale(0.96);
-    filter: blur(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
-  }
+.hero-reveal-1 {
+  transition-delay: 40ms;
 }
 
-@keyframes heroTechReveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 20px, 0) scale(0.98);
-    filter: blur(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    filter: blur(0);
-  }
+.hero-heading-part-1 {
+  transition-delay: 100ms;
 }
 
-.hero-section.is-visible .hero-reveal-1 {
-  animation: heroRevealUp 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both;
+.hero-heading-part-2 {
+  transition-delay: 240ms;
 }
 
-.hero-section.is-visible .hero-heading-part-1 {
-  animation: heroHeadingReveal 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+.hero-heading-part-3 {
+  transition-delay: 380ms;
 }
 
-.hero-section.is-visible .hero-heading-part-2 {
-  animation: heroHeadingReveal 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+.hero-description-reveal {
+  transition-delay: 560ms;
 }
 
-.hero-section.is-visible .hero-heading-part-3 {
-  animation: heroHeadingReveal 0.74s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
+.hero-reveal-4 {
+  transition-delay: 680ms;
 }
 
-.hero-section.is-visible .hero-description-reveal {
-  animation: heroRevealUp 0.78s cubic-bezier(0.22, 1, 0.36, 1) 0.56s both;
+.hero-reveal-5 {
+  transition-delay: 780ms;
 }
 
-.hero-section.is-visible .hero-reveal-4 {
-  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both;
+.hero-reveal-6 {
+  transition-delay: 880ms;
 }
 
-.hero-section.is-visible .hero-reveal-5 {
-  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.78s both;
+.hero-profile-reveal {
+  transition-delay: 300ms;
+  transition-duration: 900ms;
 }
 
-.hero-section.is-visible .hero-reveal-6 {
-  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.88s both;
+.hero-tech-reveal {
+  transition-delay: 600ms;
+  transition-duration: 800ms;
 }
 
-.hero-section.is-visible .hero-profile-reveal {
-  animation: heroProfileReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
-}
-
-.hero-section.is-visible .hero-tech-reveal {
-  animation: heroTechReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
+.hero-section[data-visible="false"] .hero-reveal,
+.hero-section[data-visible="false"] .hero-description-reveal,
+.hero-section[data-visible="false"] .hero-heading-part,
+.hero-section[data-visible="false"] .hero-profile-reveal,
+.hero-section[data-visible="false"] .hero-tech-reveal {
+  transition-delay: 0ms;
+  transition-duration: 220ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -222,10 +195,9 @@ a {
   .hero-heading-part,
   .hero-profile-reveal,
   .hero-tech-reveal {
-    opacity: 1;
     filter: none;
     transform: none;
-    animation: none !important;
+    transition-duration: 220ms;
   }
 
   .hero-profile-float,
