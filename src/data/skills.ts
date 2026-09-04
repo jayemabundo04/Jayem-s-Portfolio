@@ -43,7 +43,7 @@ export const skills: Skill[] = [
   {
     id: "mongodb",
     name: "MongoDB",
-    icon: "/images/icon/MongoDB.png",
+    icon: "/images/icon/mongoDB.png",
   },
   {
     id: "mysql",
@@ -68,7 +68,7 @@ export const skills: Skill[] = [
   {
     id: "react",
     name: "React",
-    icon: "/images/icon/React.png",
+    icon: "/images/icon/react.png",
   },
   {
     id: "tailwindcss",
