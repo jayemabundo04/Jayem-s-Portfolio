@@ -56,27 +56,9 @@ a {
   outline-offset: 2px;
 }
 
-.hero-name {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(18px);
-  animation: heroNameReveal 0.7s ease-out forwards;
-}
-
-.hero-name-delay {
-  animation-delay: 0.15s;
-}
-
-@keyframes heroProfileFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
+/* ========================================
+   Hero profile motion
+======================================== */
 
 @keyframes heroProfileGlow {
   0%,
@@ -91,31 +73,58 @@ a {
   }
 }
 
-.hero-profile-float {
-  animation: none;
+@keyframes heroProfileFloatPremium {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
 }
 
 .hero-profile-glow {
   animation: heroProfileGlow 4s ease-in-out infinite;
 }
 
+.hero-profile-float {
+  animation: heroProfileFloatPremium 5s ease-in-out infinite;
+}
+
 /* ========================================
-   Premium Hero Scroll Reveal
+   Hero viewport reveals
 ======================================== */
 
 .hero-reveal,
+.hero-description-reveal,
+.hero-heading-part,
 .hero-profile-reveal,
-.hero-tech-reveal,
-.hero-line,
-.hero-highlight {
+.hero-tech-reveal {
   opacity: 0;
+}
+
+.hero-heading-part {
+  display: inline-block;
+  transform: translate3d(0, 16px, 0);
+  filter: blur(6px);
+  will-change: opacity, transform, filter;
+}
+
+.hero-description-reveal,
+.hero-reveal,
+.hero-profile-reveal,
+.hero-tech-reveal {
+  transform: translate3d(0, 18px, 0);
+  filter: blur(6px);
+  will-change: opacity, transform, filter;
 }
 
 @keyframes heroRevealUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 32px, 0);
-    filter: blur(10px);
+    transform: translate3d(0, 18px, 0);
+    filter: blur(6px);
   }
 
   to {
@@ -125,30 +134,16 @@ a {
   }
 }
 
-@keyframes heroLineReveal {
+@keyframes heroHeadingReveal {
   from {
     opacity: 0;
-    transform: translate3d(0, 36px, 0);
-    filter: blur(10px);
+    transform: translate3d(0, 16px, 0);
+    filter: blur(6px);
   }
 
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0);
-    filter: blur(0);
-  }
-}
-
-@keyframes heroHighlightReveal {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 18px, 0) scale(0.98);
-    filter: blur(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
     filter: blur(0);
   }
 }
@@ -156,8 +151,8 @@ a {
 @keyframes heroProfileReveal {
   from {
     opacity: 0;
-    transform: translate3d(0, 46px, 0) scale(0.93);
-    filter: blur(10px);
+    transform: translate3d(0, 28px, 0) scale(0.96);
+    filter: blur(8px);
   }
 
   to {
@@ -170,8 +165,8 @@ a {
 @keyframes heroTechReveal {
   from {
     opacity: 0;
-    transform: translate3d(0, 28px, 0) scale(0.97);
-    filter: blur(7px);
+    transform: translate3d(0, 20px, 0) scale(0.98);
+    filter: blur(6px);
   }
 
   to {
@@ -182,79 +177,58 @@ a {
 }
 
 .hero-section.is-visible .hero-reveal-1 {
-  animation: heroRevealUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+  animation: heroRevealUp 0.62s cubic-bezier(0.22, 1, 0.36, 1) 0.04s both;
 }
 
-.hero-section.is-visible .hero-heading {
-  opacity: 1;
+.hero-section.is-visible .hero-heading-part-1 {
+  animation: heroHeadingReveal 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
-.hero-section.is-visible .hero-line-1 {
-  animation: heroLineReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
+.hero-section.is-visible .hero-heading-part-2 {
+  animation: heroHeadingReveal 0.68s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
 }
 
-.hero-section.is-visible .hero-line-2 {
-  animation: heroLineReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+.hero-section.is-visible .hero-heading-part-3 {
+  animation: heroHeadingReveal 0.74s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
 }
 
-.hero-section.is-visible .hero-highlight {
-  animation: heroHighlightReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
-}
-
-.hero-section.is-visible .hero-reveal-3 {
-  animation: heroRevealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.62s both;
+.hero-section.is-visible .hero-description-reveal {
+  animation: heroRevealUp 0.78s cubic-bezier(0.22, 1, 0.36, 1) 0.56s both;
 }
 
 .hero-section.is-visible .hero-reveal-4 {
-  animation: heroRevealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.74s both;
+  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both;
 }
 
 .hero-section.is-visible .hero-reveal-5 {
-  animation: heroRevealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.84s both;
+  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.78s both;
 }
 
 .hero-section.is-visible .hero-reveal-6 {
-  animation: heroRevealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.94s both;
+  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) 0.88s both;
 }
 
 .hero-section.is-visible .hero-profile-reveal {
-  animation: heroProfileReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.38s both;
+  animation: heroProfileReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
 
 .hero-section.is-visible .hero-tech-reveal {
-  animation: heroTechReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
-}
-
-/* Subtle floating motion after profile entrance */
-
-@keyframes heroProfileFloatPremium {
-  0%,
-  100% {
-    translate: 0 0;
-  }
-
-  50% {
-    translate: 0 -8px;
-  }
-}
-
-.hero-section.is-visible .hero-profile-float {
-  animation: heroProfileFloatPremium 5s ease-in-out 1.45s infinite;
+  animation: heroTechReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal,
+  .hero-description-reveal,
+  .hero-heading-part,
   .hero-profile-reveal,
-  .hero-tech-reveal,
-  .hero-line,
-  .hero-highlight {
+  .hero-tech-reveal {
     opacity: 1;
     filter: none;
     transform: none;
     animation: none !important;
   }
 
-  .hero-section.is-visible .hero-profile-float,
+  .hero-profile-float,
   .hero-profile-glow {
     animation: none;
   }
