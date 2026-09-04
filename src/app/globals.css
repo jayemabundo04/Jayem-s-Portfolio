@@ -91,18 +91,6 @@ a {
   }
 }
 
-@keyframes heroTechReveal {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .hero-profile-float {
   animation: none;
 }
@@ -111,9 +99,6 @@ a {
   animation: heroProfileGlow 4s ease-in-out infinite;
 }
 
-.hero-tech-reveal {
-  animation: none;
-}
 /* ========================================
    Premium Hero Scroll Reveal
 ======================================== */
@@ -154,8 +139,6 @@ a {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
-/* Text stagger */
-
 .hero-section.is-visible .hero-reveal-1 {
   transition-delay: 0.05s;
 }
@@ -180,8 +163,6 @@ a {
   transition-delay: 0.54s;
 }
 
-/* Highlight */
-
 .hero-highlight {
   display: inline-block;
   opacity: 0;
@@ -200,8 +181,6 @@ a {
   transition-delay: 0.22s;
 }
 
-/* Profile float starts only after reveal */
-
 @keyframes heroProfileFloatPremium {
   0%,
   100% {
@@ -217,8 +196,6 @@ a {
   animation: heroProfileFloatPremium 5s ease-in-out 1s infinite;
 }
 
-/* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   .hero-section .hero-reveal,
   .hero-section .hero-profile-reveal,
@@ -230,14 +207,8 @@ a {
     transition: none;
   }
 
-  .hero-section.is-visible .hero-profile-float {
-    animation: none;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-profile-float,
-  .hero-profile-glow,
-  .hero-tech-reveal {
+  .hero-section.is-visible .hero-profile-float,
+  .hero-profile-glow {
     animation: none;
   }
 }
@@ -283,6 +254,7 @@ a {
     animation: none;
   }
 }
+
 /* ========================================
    Tech Stack Infinite Marquee
 ======================================== */
