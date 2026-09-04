@@ -8,7 +8,7 @@ export const skills: Skill[] = [
   {
     id: "cpp",
     name: "C++",
-    icon: "/images/icon/C++ (CPlusPlus).png",
+    icon: "/images/icon/C++.png",
   },
   {
     id: "css3",
