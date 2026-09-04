@@ -31,37 +31,56 @@ const stats = [
 ];
 
 export function Hero() {
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const revealFrameRef = useRef<number | null>(null);
   const [isHeroVisible, setIsHeroVisible] = useState(false);
 
   useEffect(() => {
-    const heading = headingRef.current;
+    const hero = heroRef.current;
 
-    if (!heading) return;
+    if (!hero) return;
 
-    const visibilityThreshold = 0.2;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsHeroVisible(
-          entry.isIntersecting &&
-            entry.intersectionRatio >= visibilityThreshold
-        );
+        if (revealFrameRef.current !== null) {
+          window.cancelAnimationFrame(revealFrameRef.current);
+          revealFrameRef.current = null;
+        }
+
+        if (!entry.isIntersecting) {
+          setIsHeroVisible(false);
+          return;
+        }
+
+        revealFrameRef.current = window.requestAnimationFrame(() => {
+          revealFrameRef.current = window.requestAnimationFrame(() => {
+            setIsHeroVisible(true);
+            revealFrameRef.current = null;
+          });
+        });
       },
       {
-        threshold: [0, visibilityThreshold],
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px",
       }
     );
 
-    observer.observe(heading);
+    observer.observe(hero);
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+
+      if (revealFrameRef.current !== null) {
+        window.cancelAnimationFrame(revealFrameRef.current);
+      }
+    };
   }, []);
 
   return (
     <section
-      className={`hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white${
-        isHeroVisible ? " is-visible" : ""
-      }`}
+      ref={heroRef}
+      data-visible={isHeroVisible ? "true" : "false"}
+      className="hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white"
     >
       {/* Background */}
       <div
@@ -84,10 +103,7 @@ export function Hero() {
             </div>
 
             {/* Heading */}
-            <h1
-              ref={headingRef}
-              className="hero-heading text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]"
-            >
+            <h1 className="hero-heading text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
               <span className="hero-heading-part hero-heading-part-1">
                 I build web experiences
               </span>
@@ -193,7 +209,7 @@ export function Hero() {
               />
 
               {/* Profile */}
-              <div className="hero-profile-reveal relative z-20 mx-auto mb-[-3rem] h-[27rem] w-[22rem] sm:h-[30rem] sm:w-[24rem]">
+              <div className="hero-profile-reveal relative z-20 mx-auto mb-2 h-[27rem] w-[22rem] sm:mb-3 sm:h-[30rem] sm:w-[24rem]">
                 <div className="hero-profile-float relative h-full w-full">
                   <Image
                     src="/images/icon/profile.png"
