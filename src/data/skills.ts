@@ -18,7 +18,7 @@ export const skills: Skill[] = [
   {
     id: "express",
     name: "Express",
-    icon: "/images/icon/Express.png",
+    icon: "/images/icon/Express.png/",
   },
   {
     id: "html5",
