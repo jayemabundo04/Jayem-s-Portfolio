@@ -55,6 +55,7 @@ a {
   outline: 2px solid #2f6f5e;
   outline-offset: 2px;
 }
+
 .hero-name {
   display: inline-block;
   opacity: 0;
@@ -117,8 +118,7 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .hero-profile-float,
   .hero-profile-glow,
-  .hero-tech-reveal,
-  .christmas-snow {
+  .hero-tech-reveal {
     animation: none;
   }
 }
@@ -152,6 +152,7 @@ a {
   animation-name: snowfall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  will-change: transform;
 }
 
 .snow-drift {
@@ -159,7 +160,6 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .christmas-snow,
   .snow-drift {
     animation: none;
   }
