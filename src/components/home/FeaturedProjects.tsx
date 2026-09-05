@@ -7,7 +7,7 @@ const projects = [
     category: "Full-Stack System",
     description:
       "A workforce management system for promoter records, sell-out data, status tracking, and reporting.",
-    image: "/images/projects/promoter.png",
+    image: "/images/projects/salesforce.png",
     href: "https://www.spc-salesforce.com/login",
     technologies: ["React", "Node.js" , "Express", "MongoDB", "Vite", "GitHub", "Vercel", "Railway","Goddaddy"],
   },
