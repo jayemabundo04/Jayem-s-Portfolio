@@ -16,7 +16,7 @@ export function SkillsPreview() {
 
       <div className="relative mx-auto w-full max-w-7xl">
         {/* Small label */}
-        <div className="mb-10 px -40 text-center sm:px-8 lg:px-10">
+        <div className="mb-10 px-4 text-center sm:px-8 lg:px-10">
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-slate-500">
             Technologies I Work With
           </p>
