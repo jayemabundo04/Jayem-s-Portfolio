@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const projects = [
   {
-    title: "Promoter Workforce Analytics System",
+    title: " Salesforce Promoter Management System",
     category: "Full-Stack System",
     description:
       "A workforce management system for promoter records, sell-out data, status tracking, and reporting.",

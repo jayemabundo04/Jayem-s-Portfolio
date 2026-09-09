@@ -411,8 +411,11 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .hero-profile-float,
   .hero-profile-glow,
-  .snow-drift,
-  .tech-marquee-track {
+  .snow-drift {
     animation: none;
+  }
+
+  .tech-marquee-track {
+    animation: techMarquee 32s linear infinite;
   }
 }
