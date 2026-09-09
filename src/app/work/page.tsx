@@ -75,14 +75,6 @@ export default function WorkPage() {
           <span>REPEAT</span>
           <i />
         </div>
-
-        <div className="work-hero__visual">
-          <img
-            src="/images/projects/Work.png"
-            alt="Work experience portfolio preview"
-            className="work-hero__image"
-          />
-        </div>
       </section>
 
       <section id="work-details">
