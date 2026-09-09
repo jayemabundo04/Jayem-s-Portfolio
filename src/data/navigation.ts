@@ -10,7 +10,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: "Work",
-    href: "/projects"
+    href: "/work"
   },
   {
     label: "Approach",
