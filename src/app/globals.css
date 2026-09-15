@@ -252,7 +252,7 @@ a {
 .work-hero {
   position: relative;
   isolation: isolate;
-  min-height: min(760px, 92vh);
+  min-height: auto;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
@@ -308,9 +308,9 @@ a {
   width: min(100%, 1400px);
   margin: 0 auto;
   padding:
-    clamp(6rem, 10vw, 9rem)
+    clamp(6rem, 8vw, 8rem)
     clamp(1.25rem, 6vw, 6rem)
-    clamp(10rem, 14vw, 13rem);
+    clamp(4rem, 6vw, 6rem);
 }
 
 .work-hero__eyebrow {
@@ -494,12 +494,12 @@ a {
 
 @media (max-width: 900px) {
   .work-hero {
-    min-height: 720px;
-  }
+  min-height: auto;
+}
 
-  .work-hero__content {
-    padding-bottom: 17rem;
-  }
+.work-hero__content {
+  padding-bottom: 6rem;
+}
 
   .work-hero__signature {
     right: 4rem;
@@ -522,9 +522,9 @@ a {
 
 @media (max-width: 640px) {
   .work-hero {
-    min-height: 780px;
-    background-position: 62% center;
-  }
+  min-height: auto;
+  background-position: 62% center;
+}
 
   .work-hero__overlay {
     background:
@@ -536,9 +536,9 @@ a {
       );
   }
 
-  .work-hero__content {
-    padding: 5rem 1.2rem 18rem;
-  }
+ .work-hero__content {
+  padding: 5rem 1.2rem 5rem;
+}
 
   .work-hero__eyebrow {
     margin-bottom: 0.85rem;

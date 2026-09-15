@@ -18,7 +18,7 @@ const experiences: Experience[] = [
   {
     id: 1,
     period: "DEC 2025 – PRESENT",
-    duration: "7+ months",
+    duration: "9+ months",
     status: "Current",
     statusType: "current",
     company: "Skyworth Philippines",
@@ -30,7 +30,7 @@ const experiences: Experience[] = [
     technologies: [
       "Shopify",
       "Node.js",
-      "Google Console",
+      "Google Search Console",
       "SEO",
       "Internal Tools",
     ],
