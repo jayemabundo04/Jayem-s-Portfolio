@@ -964,15 +964,28 @@ a {
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border: 1px solid rgba(126, 156, 255, 0.2);
-  border-radius: 12px;
-  background: rgba(84, 112, 193, 0.22);
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(126, 156, 255, 0.3);
+  border-radius: 14px;
+  background: rgba(84, 112, 193, 0.18);
   color: #dce7ff;
   font-size: 0.65rem;
   font-weight: 800;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 16px rgba(91, 112, 255, 0.1);
+}
+
+.journey-card__logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(1.08);
 }
 
 .journey-card__logo--current {
