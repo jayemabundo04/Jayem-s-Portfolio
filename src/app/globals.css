@@ -624,10 +624,11 @@ a {
 .work-details {
   position: relative;
   overflow: hidden;
+  margin-top: -2px;
   scroll-margin-top: 5rem;
   background:
     radial-gradient(
-      circle at 15% 20%,
+      circle at 15% 32%,
       rgba(53, 116, 219, 0.18),
       transparent 32rem
     ),
@@ -636,10 +637,32 @@ a {
       rgba(157, 88, 186, 0.15),
       transparent 28rem
     ),
-    linear-gradient(135deg, #071225 0%, #081831 48%, #091328 100%);
+    linear-gradient(
+      180deg,
+      #02050d 0%,
+      #040b19 10%,
+      #071225 22%,
+      #081831 55%,
+      #091328 100%
+    );
   color: #ffffff;
 }
-
+.work-details::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  height: 180px;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 5, 13, 0.95) 0%,
+    rgba(4, 11, 25, 0.55) 45%,
+    transparent 100%
+  );
+}
 .work-details::before {
   position: absolute;
   inset: 0;
