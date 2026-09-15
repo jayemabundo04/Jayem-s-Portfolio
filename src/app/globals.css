@@ -986,11 +986,33 @@ a {
 .journey-card__logo--academic {
   color: #bd91ff;
 }
-
+.journey-card__logo-image {
+  display: block;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
 .journey-card__heading {
   min-width: 0;
 }
-
+.journey-card__logo {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  padding: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(126, 156, 255, 0.28);
+  border-radius: 12px;
+  background: rgba(84, 112, 193, 0.18);
+  color: #dce7ff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 18px rgba(104, 121, 255, 0.08);
+}
 .journey-card__company {
   display: flex;
   flex-wrap: wrap;

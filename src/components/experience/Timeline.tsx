@@ -9,6 +9,7 @@ type Experience = {
   statusType: "current" | "ojt" | "academic";
   company: string;
   companyMark: string;
+companyLogo?: string;
   role: string;
   location: string;
   description: string;
@@ -73,6 +74,7 @@ technologies: [
     statusType: "academic",
     company: "Bulacan State University",
     companyMark: "BSU",
+    companyLogo: "/images/logos/bsu.jpg",
     role: "Capstone Project – Tech Revolution",
     location: "Malolos, Bulacan",
     description:
@@ -132,12 +134,21 @@ export function Timeline() {
             <article className="journey-card">
               <div className="journey-card__details">
                 <div className="journey-card__top">
-                  <span
-                    className={`journey-card__logo journey-card__logo--${experience.statusType}`}
-                    aria-hidden="true"
-                  >
-                    {experience.companyMark}
-                  </span>
+                  <div
+  className={`journey-card__logo journey-card__logo--${experience.statusType}`}
+>
+  {experience.companyLogo ? (
+    <Image
+      src={experience.companyLogo}
+      alt={`${experience.company} logo`}
+      width={38}
+      height={38}
+      className="journey-card__logo-image"
+    />
+  ) : (
+    <span aria-hidden="true">{experience.companyMark}</span>
+  )}
+</div>
 
                   <div className="journey-card__heading">
                     <div className="journey-card__company">
