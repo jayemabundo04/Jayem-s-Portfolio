@@ -659,12 +659,16 @@ a {
   z-index: 1;
   width: min(100% - 2.5rem, 1180px);
   margin-inline: auto;
-  padding: clamp(5rem, 8vw, 8rem) 0;
+  padding:
+    clamp(2rem, 3vw, 3rem)
+    0
+    clamp(5rem, 8vw, 8rem);
 }
 
 .experience-timeline__heading {
-  max-width: 650px;
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  max-width: 900px;
+  margin: 0 auto clamp(3rem, 6vw, 5rem);
+  text-align: center;
 }
 
 .experience-timeline__heading > p {
@@ -677,6 +681,7 @@ a {
 
 .experience-timeline__heading h2 {
   margin: 0;
+  white-space: nowrap;
   color: #ffffff;
   font-size: clamp(2.6rem, 5vw, 5rem);
   line-height: 0.95;
@@ -992,7 +997,10 @@ a {
     width: min(100% - 2rem, 1180px);
     padding: 4rem 0;
   }
-
+.experience-timeline__heading h2 {
+  font-size: clamp(2.4rem, 12vw, 3.5rem);
+  white-space: normal;
+}
   .experience-timeline__heading {
     margin-bottom: 2.5rem;
   }
