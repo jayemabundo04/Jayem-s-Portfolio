@@ -74,7 +74,7 @@ technologies: [
     statusType: "academic",
     company: "Bulacan State University",
     companyMark: "BSU",
-    companyLogo: "/images/logos/bsu.jpg",
+    companyLogo: "/images/icon/bsu.jpg",
     role: "Capstone Project – Tech Revolution",
     location: "Malolos, Bulacan",
     description:
