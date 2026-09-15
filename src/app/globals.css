@@ -617,6 +617,419 @@ a {
    Reduced Motion
 ======================================== */
 
+/* ========================================
+   Work Experience Timeline
+======================================== */
+
+.work-details {
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 5rem;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(71, 84, 255, 0.12),
+      transparent 32rem
+    ),
+    linear-gradient(180deg, #02050d 0%, #050a18 55%, #02050d 100%);
+  color: #ffffff;
+}
+
+.work-details::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+  background-size: 72px 72px;
+}
+
+.experience-timeline {
+  position: relative;
+  z-index: 1;
+  width: min(100% - 2.5rem, 1180px);
+  margin-inline: auto;
+  padding: clamp(5rem, 8vw, 8rem) 0;
+}
+
+.experience-timeline__heading {
+  max-width: 650px;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.experience-timeline__heading > p {
+  margin: 0 0 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.experience-timeline__heading h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.6rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.experience-timeline__heading h2 span {
+  color: #7377ff;
+  text-shadow: 0 0 35px rgba(91, 97, 255, 0.25);
+}
+
+.experience-timeline__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-timeline__list::before {
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 124px;
+  width: 1px;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgba(112, 118, 255, 0.8),
+    rgba(112, 118, 255, 0.2)
+  );
+  box-shadow: 0 0 14px rgba(98, 105, 255, 0.32);
+}
+
+.experience-timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px 24px minmax(0, 1fr);
+  gap: 0 1.5rem;
+  align-items: start;
+}
+
+.experience-timeline__date {
+  padding-top: 0.8rem;
+  text-align: right;
+}
+
+.experience-timeline__date p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+}
+
+.experience-timeline__date span {
+  display: block;
+  margin-top: 0.2rem;
+  color: rgba(255, 255, 255, 0.32);
+  font-size: 0.57rem;
+}
+
+.experience-timeline__marker {
+  position: relative;
+  z-index: 2;
+  width: 11px;
+  height: 11px;
+  margin: 1rem auto 0;
+  border: 2px solid #8b8fff;
+  border-radius: 50%;
+  background: #070c1b;
+  box-shadow:
+    0 0 0 5px rgba(104, 111, 255, 0.08),
+    0 0 15px rgba(104, 111, 255, 0.7);
+}
+
+.experience-timeline__item:first-child
+  .experience-timeline__marker {
+  border-color: #5cffab;
+  box-shadow:
+    0 0 0 5px rgba(92, 255, 171, 0.08),
+    0 0 15px rgba(92, 255, 171, 0.7);
+}
+
+.experience-card {
+  min-width: 0;
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(210px, 27vw, 310px);
+  overflow: hidden;
+  border: 1px solid rgba(126, 135, 255, 0.2);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      120deg,
+      rgba(13, 24, 48, 0.96),
+      rgba(6, 12, 29, 0.96)
+    );
+  box-shadow:
+    0 18px 55px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(126, 135, 255, 0.42);
+  box-shadow:
+    0 22px 65px rgba(0, 0, 0, 0.36),
+    0 0 30px rgba(75, 85, 255, 0.09);
+}
+
+.experience-card__content {
+  min-width: 0;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.experience-card__company-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.experience-card__company-row h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.experience-card__status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid;
+  border-radius: 999px;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.experience-card__status--current {
+  border-color: rgba(76, 255, 165, 0.35);
+  background: rgba(76, 255, 165, 0.1);
+  color: #69ffb5;
+}
+
+.experience-card__status--ojt {
+  border-color: rgba(118, 144, 255, 0.4);
+  background: rgba(94, 113, 255, 0.12);
+  color: #a9b5ff;
+}
+
+.experience-card__status--academic {
+  border-color: rgba(176, 134, 255, 0.4);
+  background: rgba(145, 94, 255, 0.12);
+  color: #cbb3ff;
+}
+
+.experience-card__role {
+  margin: 0.5rem 0 0;
+  color: #aeb8ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.experience-card__location {
+  margin: 0.28rem 0 0;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.65rem;
+}
+
+.experience-card__description {
+  max-width: 620px;
+  margin: 1rem 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.experience-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-card__technologies li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(123, 134, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(61, 73, 147, 0.13);
+  color: rgba(220, 224, 255, 0.72);
+  font-size: 0.56rem;
+  font-weight: 600;
+}
+
+.experience-card__media {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+  background: #0b1224;
+}
+
+.experience-card__media::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 12, 29, 0.85) 0%,
+      transparent 42%
+    ),
+    linear-gradient(
+      180deg,
+      transparent 35%,
+      rgba(2, 5, 13, 0.78) 100%
+    );
+}
+
+.experience-card__image {
+  object-fit: cover;
+  transition: transform 450ms ease;
+}
+
+.experience-card:hover .experience-card__image {
+  transform: scale(1.045);
+}
+
+.experience-card__button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 35px;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(127, 136, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(15, 20, 52, 0.72);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.experience-card__button:hover {
+  transform: translateY(-2px);
+  background: rgba(68, 76, 190, 0.7);
+}
+
+/* ========================================
+   Work Timeline Tablet
+======================================== */
+
+@media (max-width: 900px) {
+  .experience-timeline__list::before {
+    left: 14px;
+  }
+
+  .experience-timeline__item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 0 1rem;
+  }
+
+  .experience-timeline__date {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 0 0.7rem;
+    text-align: left;
+  }
+
+  .experience-timeline__marker {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    margin-top: 0.2rem;
+  }
+
+  .experience-card {
+    grid-column: 2;
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1fr) 230px;
+  }
+}
+
+/* ========================================
+   Work Timeline Mobile
+======================================== */
+
+@media (max-width: 640px) {
+  .experience-timeline {
+    width: min(100% - 2rem, 1180px);
+    padding: 4rem 0;
+  }
+
+  .experience-timeline__heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .experience-timeline__heading h2 {
+    font-size: clamp(2.4rem, 12vw, 3.5rem);
+  }
+
+  .experience-timeline__list {
+    gap: 1.75rem;
+  }
+
+  .experience-card {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card__content {
+    padding: 1.2rem;
+  }
+
+  .experience-card__media {
+    min-height: 180px;
+  }
+
+  .experience-card__media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(6, 12, 29, 0.2),
+      rgba(2, 5, 13, 0.8)
+    );
+  }
+
+  .experience-card__description {
+    font-size: 0.7rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-profile-float,
   .hero-profile-glow,

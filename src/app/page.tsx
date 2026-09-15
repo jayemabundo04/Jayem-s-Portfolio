@@ -3,6 +3,7 @@ import { SkillsPreview } from "@/components/home/SkillsPreview";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 
+
 export default function HomePage() {
   return (
     <>

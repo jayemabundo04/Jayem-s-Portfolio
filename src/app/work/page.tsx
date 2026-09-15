@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Timeline } from "@/components/experience/Timeline";
 
 export const metadata: Metadata = {
   title: "Work Experience",
@@ -24,7 +25,7 @@ const stats = [
 
 export default function WorkPage() {
   return (
-    <main>
+    <>
       <section className="work-hero" aria-labelledby="work-title">
         <div className="work-hero__overlay" aria-hidden="true" />
         <div className="work-hero__grid" aria-hidden="true" />
@@ -77,9 +78,13 @@ export default function WorkPage() {
         </div>
       </section>
 
-      <section id="work-details">
-        {/* Work experience sections will go here */}
+      <section
+        id="work-details"
+        className="work-details"
+        aria-labelledby="experience-timeline-title"
+      >
+        <Timeline />
       </section>
-    </main>
+    </>
   );
 }
