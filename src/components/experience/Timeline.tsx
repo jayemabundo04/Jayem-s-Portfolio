@@ -83,6 +83,28 @@ technologies: [
     technologies: ["Java", "MySQL", "ESP32", "GPS", "SMS", "XAMPP"],
     href: "/projects",
   },
+ {
+    id: 4,
+    period: ["2025 — PRESENT"],
+    duration: "1+ year",
+    status: "Professional",
+    statusType: "current",
+    company: "Skyworth Philippines",
+    companyMark: "SP",
+    role: "Online Marketing & Web Support Assistant",
+    location: "Makati, Philippines",
+    description:
+      "Supported website operations, e-commerce content, SEO activities, and internal digital tools across daily business workflows.",
+    image: "/images/projects/skyworth.png",
+    technologies: [
+      "Shopify",
+      "Liquid",
+      "HTML/CSS",
+      "JavaScript",
+      "SEO",
+    ],
+    href: "/projects",
+  },
 ];
 
 export function Timeline() {
