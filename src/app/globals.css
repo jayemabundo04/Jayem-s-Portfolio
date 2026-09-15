@@ -618,7 +618,7 @@ a {
 ======================================== */
 
 /* ========================================
-   Work Experience Timeline
+   Work Journey
 ======================================== */
 
 .work-details {
@@ -627,11 +627,16 @@ a {
   scroll-margin-top: 5rem;
   background:
     radial-gradient(
-      circle at 80% 20%,
-      rgba(71, 84, 255, 0.12),
+      circle at 15% 20%,
+      rgba(53, 116, 219, 0.18),
       transparent 32rem
     ),
-    linear-gradient(180deg, #02050d 0%, #050a18 55%, #02050d 100%);
+    radial-gradient(
+      circle at 88% 82%,
+      rgba(157, 88, 186, 0.15),
+      transparent 28rem
+    ),
+    linear-gradient(135deg, #071225 0%, #081831 48%, #091328 100%);
   color: #ffffff;
 }
 
@@ -640,516 +645,526 @@ a {
   inset: 0;
   content: "";
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.2;
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    );
-  background-size: 72px 72px;
+    radial-gradient(circle, #ffffff 1px, transparent 1.5px),
+    radial-gradient(circle, #637cff 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    80px 90px;
+  background-size:
+    190px 190px,
+    250px 250px;
 }
 
-.experience-timeline {
+.journey {
   position: relative;
   z-index: 1;
-  width: min(100% - 2.5rem, 1180px);
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  width: min(100% - 3rem, 1500px);
   margin-inline: auto;
-  padding:
-    clamp(2rem, 3vw, 3rem)
-    0
-    clamp(5rem, 8vw, 8rem);
+  padding: clamp(3rem, 5vw, 5rem) 0;
 }
 
-.experience-timeline__heading {
-  max-width: 900px;
-  margin: 0 auto clamp(3rem, 6vw, 5rem);
-  text-align: center;
+.journey__intro {
+  position: relative;
+  min-height: 100%;
+  padding-top: 0.4rem;
 }
 
-.experience-timeline__heading > p {
-  margin: 0 0 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.65rem;
+.journey__eyebrow {
+  margin: 0 0 0.8rem;
+  color: #b8c8ef;
+  font-size: 0.63rem;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
 }
 
-.experience-timeline__heading h2 {
+.journey__title {
   margin: 0;
-  white-space: nowrap;
-  color: #ffffff;
-  font-size: clamp(2.6rem, 5vw, 5rem);
-  line-height: 0.95;
-  letter-spacing: -0.055em;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
 }
 
-.experience-timeline__heading h2 span {
-  color: #7377ff;
-  text-shadow: 0 0 35px rgba(91, 97, 255, 0.25);
+.journey__title span {
+  color: #79a6ff;
 }
 
-.experience-timeline__list {
+.journey__summary {
+  margin: 1.2rem 0 0;
+  color: rgba(211, 222, 248, 0.66);
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.journey__accent {
+  display: block;
+  width: 58px;
+  height: 2px;
+  margin-top: 1.3rem;
+  background: linear-gradient(90deg, #75e8ff, #7181ff);
+  box-shadow: 0 0 12px rgba(92, 213, 255, 0.45);
+}
+
+.journey__signature {
+  position: absolute;
+  bottom: 1rem;
+  left: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  color: rgba(155, 180, 255, 0.5);
+  font-family: "Brush Script MT", "Segoe Script", cursive;
+  font-size: 1.65rem;
+  line-height: 0.9;
+  transform: rotate(-8deg);
+}
+
+.journey__signature span:nth-child(2) {
+  margin-left: 0.8rem;
+}
+
+.journey__signature span:nth-child(3) {
+  margin-left: 1.5rem;
+}
+
+.journey__signature span:nth-child(4) {
+  margin-left: 2rem;
+}
+
+.journey__timeline {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.experience-timeline__list::before {
+.journey__timeline::before {
   position: absolute;
-  top: 0.5rem;
-  bottom: 0.5rem;
-  left: 124px;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  left: 105px;
   width: 1px;
   content: "";
   background: linear-gradient(
     180deg,
-    rgba(112, 118, 255, 0.8),
-    rgba(112, 118, 255, 0.2)
+    rgba(78, 231, 255, 0.8),
+    rgba(84, 112, 255, 0.65),
+    rgba(143, 81, 255, 0.7)
   );
-  box-shadow: 0 0 14px rgba(98, 105, 255, 0.32);
+  box-shadow: 0 0 14px rgba(86, 132, 255, 0.5);
 }
 
-.experience-timeline__item {
+.journey__item {
   position: relative;
   display: grid;
-  grid-template-columns: 100px 24px minmax(0, 1fr);
-  gap: 0 1.5rem;
-  align-items: start;
+  grid-template-columns: 85px 16px minmax(0, 1fr);
+  gap: 0 0.8rem;
+  align-items: center;
 }
 
-.experience-timeline__date {
-  padding-top: 0.8rem;
+.journey__date {
   text-align: right;
 }
 
-.experience-timeline__date p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.62rem;
-  font-weight: 700;
-  line-height: 1.5;
-  letter-spacing: 0.06em;
-}
-
-.experience-timeline__date span {
+.journey__date strong {
   display: block;
-  margin-top: 0.2rem;
-  color: rgba(255, 255, 255, 0.32);
-  font-size: 0.57rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.65rem;
+  line-height: 1.35;
 }
 
-.experience-timeline__marker {
+.journey__date span {
+  display: block;
+  margin-top: 0.55rem;
+  color: rgba(205, 216, 240, 0.5);
+  font-size: 0.6rem;
+}
+
+.journey__marker {
   position: relative;
-  z-index: 2;
-  width: 11px;
-  height: 11px;
-  margin: 1rem auto 0;
-  border: 2px solid #8b8fff;
+  z-index: 3;
+  width: 13px;
+  height: 13px;
+  border: 3px solid;
   border-radius: 50%;
-  background: #070c1b;
-  box-shadow:
-    0 0 0 5px rgba(104, 111, 255, 0.08),
-    0 0 15px rgba(104, 111, 255, 0.7);
+  background: #0b1630;
 }
 
-.experience-timeline__item:first-child
-  .experience-timeline__marker {
-  border-color: #5cffab;
+.journey__marker--current {
+  border-color: #56efca;
   box-shadow:
-    0 0 0 5px rgba(92, 255, 171, 0.08),
-    0 0 15px rgba(92, 255, 171, 0.7);
+    0 0 0 7px rgba(68, 235, 196, 0.15),
+    0 0 18px rgba(68, 235, 196, 0.9);
 }
 
-.experience-card {
-  min-width: 0;
-  min-height: 190px;
+.journey__marker--ojt {
+  border-color: #638aff;
+  box-shadow:
+    0 0 0 7px rgba(82, 116, 255, 0.15),
+    0 0 18px rgba(82, 116, 255, 0.9);
+}
+
+.journey__marker--academic {
+  border-color: #985fff;
+  box-shadow:
+    0 0 0 7px rgba(139, 78, 255, 0.15),
+    0 0 18px rgba(139, 78, 255, 0.9);
+}
+
+.journey-card {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) clamp(210px, 27vw, 310px);
+  grid-template-columns: minmax(340px, 0.95fr) minmax(390px, 1.15fr);
+  min-width: 0;
+  min-height: 205px;
   overflow: hidden;
-  border: 1px solid rgba(126, 135, 255, 0.2);
+  border: 1px solid rgba(141, 170, 255, 0.28);
   border-radius: 18px;
   background:
     linear-gradient(
-      120deg,
-      rgba(13, 24, 48, 0.96),
-      rgba(6, 12, 29, 0.96)
+      125deg,
+      rgba(43, 69, 125, 0.28),
+      rgba(10, 28, 62, 0.4) 48%,
+      rgba(62, 48, 112, 0.2)
     );
   box-shadow:
-    0 18px 55px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+    0 18px 55px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 1px 0 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(135%);
+  -webkit-backdrop-filter: blur(20px) saturate(135%);
   transition:
     transform 220ms ease,
     border-color 220ms ease,
     box-shadow 220ms ease;
 }
 
-.experience-card:hover {
+.journey-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.09),
+    transparent 22%,
+    transparent 72%,
+    rgba(128, 105, 255, 0.07)
+  );
+}
+
+.journey-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(126, 135, 255, 0.42);
+  border-color: rgba(158, 188, 255, 0.52);
   box-shadow:
-    0 22px 65px rgba(0, 0, 0, 0.36),
-    0 0 30px rgba(75, 85, 255, 0.09);
+    0 22px 65px rgba(0, 0, 0, 0.38),
+    0 0 32px rgba(73, 111, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
-.experience-card__content {
+.journey-card__details {
+  position: relative;
+  z-index: 1;
   min-width: 0;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
+  padding: clamp(1rem, 1.7vw, 1.5rem);
 }
 
-.experience-card__company-row {
+.journey-card__top {
+  display: flex;
+  gap: 1rem;
+}
+
+.journey-card__logo {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(126, 156, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(84, 112, 193, 0.22);
+  color: #dce7ff;
+  font-size: 0.65rem;
+  font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.journey-card__logo--current {
+  color: #6ff4d1;
+}
+
+.journey-card__logo--ojt {
+  color: #8baaff;
+}
+
+.journey-card__logo--academic {
+  color: #bd91ff;
+}
+
+.journey-card__heading {
+  min-width: 0;
+}
+
+.journey-card__company {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.7rem;
   align-items: center;
 }
 
-.experience-card__company-row h3 {
+.journey-card__company h3 {
   margin: 0;
-  color: #ffffff;
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
   line-height: 1.2;
   letter-spacing: -0.025em;
 }
 
-.experience-card__status {
+.journey-card__status {
   display: inline-flex;
-  align-items: center;
-  min-height: 20px;
-  padding: 0.18rem 0.55rem;
+  padding: 0.25rem 0.85rem;
   border: 1px solid;
   border-radius: 999px;
-  font-size: 0.52rem;
+  font-size: 0.55rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
 }
 
-.experience-card__status--current {
-  border-color: rgba(76, 255, 165, 0.35);
-  background: rgba(76, 255, 165, 0.1);
-  color: #69ffb5;
+.journey-card__status--current {
+  border-color: #43dcb5;
+  background: rgba(33, 205, 159, 0.1);
+  color: #64f2ce;
 }
 
-.experience-card__status--ojt {
-  border-color: rgba(118, 144, 255, 0.4);
-  background: rgba(94, 113, 255, 0.12);
-  color: #a9b5ff;
+.journey-card__status--ojt {
+  border-color: #5c85ff;
+  background: rgba(74, 105, 255, 0.1);
+  color: #9bb3ff;
 }
 
-.experience-card__status--academic {
-  border-color: rgba(176, 134, 255, 0.4);
-  background: rgba(145, 94, 255, 0.12);
-  color: #cbb3ff;
+.journey-card__status--academic {
+  border-color: #985cff;
+  background: rgba(139, 81, 255, 0.1);
+  color: #c49bff;
 }
 
-.experience-card__role {
-  margin: 0.5rem 0 0;
-  color: #aeb8ff;
-  font-size: 0.75rem;
+.journey-card__role {
+  margin: 0.48rem 0 0;
+  color: #b7c9ff;
+  font-size: 0.72rem;
   font-weight: 600;
 }
 
-.experience-card__location {
-  margin: 0.28rem 0 0;
-  color: rgba(255, 255, 255, 0.38);
-  font-size: 0.65rem;
+.journey-card__location {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  margin: 0.45rem 0 0;
+  color: rgba(206, 218, 244, 0.48);
+  font-size: 0.63rem;
 }
 
-.experience-card__description {
-  max-width: 620px;
-  margin: 1rem 0 0;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 0.72rem;
-  line-height: 1.65;
+.journey-card__location span {
+  color: #7f9cff;
+  font-size: 0.4rem;
 }
 
-.experience-card__technologies {
+.journey-card__description {
+  margin: 1rem 0 0 4rem;
+  color: rgba(222, 229, 248, 0.7);
+  font-size: 0.66rem;
+  line-height: 1.55;
+}
+
+.journey-card__technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.45rem;
-  margin: 1.2rem 0 0;
+  gap: 0.4rem;
+  margin: 0.85rem 0 0 4rem;
   padding: 0;
   list-style: none;
 }
 
-.experience-card__technologies li {
-  display: inline-flex;
-  align-items: center;
-  min-height: 25px;
-  padding: 0.28rem 0.65rem;
-  border: 1px solid rgba(123, 134, 255, 0.18);
+.journey-card__technologies li {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(101, 137, 255, 0.28);
   border-radius: 999px;
-  background: rgba(61, 73, 147, 0.13);
-  color: rgba(220, 224, 255, 0.72);
-  font-size: 0.56rem;
+  background: rgba(42, 69, 139, 0.24);
+  color: rgba(225, 232, 255, 0.82);
+  font-size: 0.52rem;
   font-weight: 600;
 }
 
-.experience-card__media {
+.journey-card__technologies li:first-child {
+  border-color: rgba(58, 224, 175, 0.38);
+  background: rgba(28, 183, 139, 0.18);
+  color: #71f0cd;
+}
+
+.journey-card__preview {
   position: relative;
-  min-height: 190px;
+  z-index: 1;
+  min-height: 205px;
+  margin: 0.75rem;
   overflow: hidden;
-  background: #0b1224;
+  border: 1px solid rgba(160, 188, 255, 0.16);
+  border-radius: 13px;
+  background: #132344;
 }
 
-.experience-card__media::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6, 12, 29, 0.85) 0%,
-      transparent 42%
-    ),
-    linear-gradient(
-      180deg,
-      transparent 35%,
-      rgba(2, 5, 13, 0.78) 100%
-    );
-}
-
-.experience-card__image {
+.journey-card__image {
   object-fit: cover;
   transition: transform 450ms ease;
 }
 
-.experience-card:hover .experience-card__image {
-  transform: scale(1.045);
+.journey-card:hover .journey-card__image {
+  transform: scale(1.035);
 }
 
-.experience-card__button {
+.journey-card__preview-overlay {
   position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 21, 47, 0.12), transparent 42%),
+    linear-gradient(180deg, transparent 50%, rgba(4, 12, 31, 0.75));
+}
+
+.journey-card__button {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
   z-index: 2;
   display: inline-flex;
+  gap: 0.8rem;
   align-items: center;
-  gap: 0.55rem;
-  min-height: 35px;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid rgba(127, 136, 255, 0.55);
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(105, 142, 255, 0.7);
   border-radius: 999px;
-  background: rgba(15, 20, 52, 0.72);
-  backdrop-filter: blur(10px);
+  background: rgba(6, 21, 62, 0.84);
   color: #ffffff;
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.58rem;
+  font-weight: 700;
   text-decoration: none;
+  backdrop-filter: blur(10px);
   transition:
-    background 180ms ease,
-    transform 180ms ease;
+    transform 180ms ease,
+    background 180ms ease;
 }
 
-.experience-card__button:hover {
+.journey-card__button:hover {
   transform: translateY(-2px);
-  background: rgba(68, 76, 190, 0.7);
+  background: rgba(38, 74, 175, 0.9);
 }
 
 /* ========================================
-   Crystal Timeline Panel
+   Journey Tablet
 ======================================== */
 
-.experience-timeline__list {
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-  border: 1px solid rgba(157, 178, 255, 0.22);
-  border-radius: 26px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(110, 138, 255, 0.12) 0%,
-      rgba(29, 47, 94, 0.08) 35%,
-      rgba(139, 97, 255, 0.1) 70%,
-      rgba(255, 255, 255, 0.035) 100%
-    );
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.38),
-    0 0 50px rgba(71, 88, 255, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    inset 0 -1px 0 rgba(120, 143, 255, 0.08);
-  backdrop-filter: blur(22px) saturate(135%);
-  -webkit-backdrop-filter: blur(22px) saturate(135%);
-}
-
-.experience-timeline__list::after {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  content: "";
-  overflow: hidden;
-  border-radius: inherit;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      115deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.055) 20%,
-      transparent 38%
-    ),
-    linear-gradient(
-      155deg,
-      transparent 52%,
-      rgba(113, 135, 255, 0.055) 70%,
-      transparent 88%
-    );
-}
-
-.experience-timeline__list::before {
-  left: calc(clamp(1.25rem, 2.5vw, 2rem) + 124px);
-  z-index: 1;
-}
-
-.experience-timeline__item {
-  z-index: 2;
-}
-
-.experience-card {
-  position: relative;
-  border-color: rgba(157, 180, 255, 0.28);
-  background:
-    linear-gradient(
-      120deg,
-      rgba(39, 60, 111, 0.3) 0%,
-      rgba(12, 25, 57, 0.42) 46%,
-      rgba(37, 35, 88, 0.28) 100%
-    );
-  box-shadow:
-    0 18px 48px rgba(0, 0, 0, 0.28),
-    0 0 24px rgba(80, 103, 255, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    inset 1px 0 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(18px) saturate(130%);
-  -webkit-backdrop-filter: blur(18px) saturate(130%);
-}
-
-.experience-card::before {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  content: "";
-  pointer-events: none;
-  background:
-    linear-gradient(
-      125deg,
-      rgba(255, 255, 255, 0.08) 0%,
-      transparent 24%,
-      transparent 70%,
-      rgba(124, 107, 255, 0.06) 100%
-    );
-}
-
-.experience-card__content,
-.experience-card__media {
-  position: relative;
-  z-index: 1;
-}
-
-.experience-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(170, 190, 255, 0.52);
-  box-shadow:
-    0 24px 65px rgba(0, 0, 0, 0.4),
-    0 0 34px rgba(83, 105, 255, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
-}
-
-/* ========================================
-   Work Timeline Tablet
-======================================== */
-
-@media (max-width: 900px) {
-  .experience-timeline__list::before {
-  left: calc(clamp(1.25rem, 2.5vw, 2rem) + 14px);
-}
-
-  .experience-timeline__item {
-    grid-template-columns: 28px minmax(0, 1fr);
-    gap: 0 1rem;
+@media (max-width: 1100px) {
+  .journey {
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 2rem;
   }
 
-  .experience-timeline__date {
+  .journey-card {
+    grid-template-columns: 1fr 42%;
+  }
+
+  .journey__signature {
+    display: none;
+  }
+}
+
+/* ========================================
+   Journey Mobile
+======================================== */
+
+@media (max-width: 760px) {
+  .journey {
+    grid-template-columns: 1fr;
+    width: min(100% - 2rem, 650px);
+    padding: 3rem 0;
+  }
+
+  .journey__intro {
+    text-align: center;
+  }
+
+  .journey__summary {
+    display: none;
+  }
+
+  .journey__accent {
+    margin-inline: auto;
+  }
+
+  .journey__timeline::before {
+    left: 7px;
+  }
+
+  .journey__item {
+    grid-template-columns: 16px minmax(0, 1fr);
+    gap: 0 0.8rem;
+    align-items: start;
+  }
+
+  .journey__date {
     grid-column: 2;
-    grid-row: 1;
-    padding: 0 0 0.7rem;
+    padding-bottom: 0.7rem;
     text-align: left;
   }
 
-  .experience-timeline__marker {
+  .journey__date strong {
+    display: inline;
+    margin-right: 0.3rem;
+  }
+
+  .journey__marker {
     grid-column: 1;
     grid-row: 1 / span 2;
-    margin-top: 0.2rem;
+    margin-top: 0.1rem;
   }
 
-  .experience-card {
+  .journey-card {
     grid-column: 2;
     grid-row: 2;
-    grid-template-columns: minmax(0, 1fr) 230px;
-  }
-}
-
-/* ========================================
-   Work Timeline Mobile
-======================================== */
-
-@media (max-width: 640px) {
-  .experience-timeline {
-    width: min(100% - 2rem, 1180px);
-    padding: 4rem 0;
-  }
-  .experience-timeline__list {
-  padding: 1rem;
-  border-radius: 20px;
-}
-
-.experience-timeline__list::before {
-  left: calc(1rem + 14px);
-}
-.experience-timeline__heading h2 {
-  font-size: clamp(2.4rem, 12vw, 3.5rem);
-  white-space: normal;
-}
-  .experience-timeline__heading {
-    margin-bottom: 2.5rem;
-  }
-
-  .experience-timeline__heading h2 {
-    font-size: clamp(2.4rem, 12vw, 3.5rem);
-  }
-
-  .experience-timeline__list {
-    gap: 1.75rem;
-  }
-
-  .experience-card {
     grid-template-columns: 1fr;
   }
 
-  .experience-card__content {
-    padding: 1.2rem;
+  .journey-card__description,
+  .journey-card__technologies {
+    margin-left: 0;
   }
 
-  .experience-card__media {
-    min-height: 180px;
+  .journey-card__preview {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-card__top {
+    align-items: flex-start;
   }
 
-  .experience-card__media::after {
-    background: linear-gradient(
-      180deg,
-      rgba(6, 12, 29, 0.2),
-      rgba(2, 5, 13, 0.8)
-    );
+  .journey-card__logo {
+    width: 42px;
+    height: 42px;
   }
 
-  .experience-card__description {
-    font-size: 0.7rem;
+  .journey-card__company {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .journey-card__preview {
+    min-height: 165px;
   }
 }
 
