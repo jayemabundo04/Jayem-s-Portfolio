@@ -306,7 +306,7 @@ export function SkyworthCaseStudy() {
       <div>
         <section className={`${styles.section} ${styles.reveal}`} aria-labelledby="website-title">
           <div className={styles.container}>
-            <div className={styles.sectionHeadingGrid}>
+            <div className={`${styles.sectionHeadingGrid} ${styles.websiteHeadingGrid}`}>
               <div>
                 <p className={styles.sectionLabel}>
                   <span>01</span>
@@ -318,9 +318,9 @@ export function SkyworthCaseStudy() {
               <div className={styles.sectionLead}>
                 <h3>Building and Maintaining the Shopify Experience</h3>
                 <p>
-                  Managed and customized the Skyworth Philippines Shopify website, 
-                  developing and maintaining theme sections, Store Locator features,
-                  content, responsive layouts, SEO, and day-to-day website updates.
+                  Managed and customized the Skyworth Philippines Shopify website,
+                  developing and maintaining theme sections, Store Locator features, content,
+                  responsive layouts, SEO, and day-to-day website updates.
                 </p>
               </div>
             </div>
