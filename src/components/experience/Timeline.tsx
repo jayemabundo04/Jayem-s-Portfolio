@@ -53,7 +53,7 @@ const experiences: Experience[] = [
   location: "Makati, Philippines",
   description:
     "Handles website management, online marketing support, e-commerce content, and internal digital tools. Manages Shopify updates, SEO tasks, and digital initiatives.",
-  image: "/images/projects/skyworth.png",
+  image: "/images/projects/salesforce.png",
   technologies: [
     "Shopify",
     "Liquid",
