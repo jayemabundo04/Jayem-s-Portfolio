@@ -319,6 +319,14 @@
   margin-bottom: clamp(3rem, 6vw, 5rem);
 }
 
+.websiteHeadingGrid > :first-child {
+  order: 2;
+}
+
+.websiteHeadingGrid > :last-child {
+  order: 1;
+}
+
 .sectionLabel {
   display: flex;
   align-items: center;
@@ -1121,6 +1129,11 @@
   .systemIntro {
     align-items: start;
     gap: 2rem;
+  }
+
+  .websiteHeadingGrid > :first-child,
+  .websiteHeadingGrid > :last-child {
+    order: initial;
   }
 
   .websiteGrid,
