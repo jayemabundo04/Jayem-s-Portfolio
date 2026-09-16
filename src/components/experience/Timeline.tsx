@@ -61,6 +61,9 @@ const experiences: Experience[] = [
     "Node.js",
     "Railway",
     "GoDaddy",
+    "GitHub",
+    "Vercel",
+    "Vite",
   ],
   href: "/projects",
 },
@@ -100,7 +103,7 @@ const experiences: Experience[] = [
     description:
       "Developed a digital waste collection and scheduling platform for barangay residents. Added GPS tracking, SMS notifications, and management tools.",
     image: "/images/projects/waste-management.png",
-    technologies: ["Java", "MySQL", "ESP32", "GPS", "SMS", "XAMPP"],
+    technologies: ["MERN Stack", "Vercel","GitHub" "ESP32", "GPS", "SMS", "XAMPP", "Neo-M8N GPS module", "Arduino IDE"],
     href: "/projects",
   },
 ];
