@@ -52,14 +52,15 @@ const experiences: Experience[] = [
   role: "Online Marketing & Web Support Assistant",
   location: "Makati, Philippines",
   description:
-    "Handles website management, online marketing support, e-commerce content, and internal digital tools. Manages Shopify updates, SEO tasks, and digital initiatives.",
+    "Developed a full-stack MERN-based Salesforce system for managing internal business operations, workflows, and data through a centralized web application.",
   image: "/images/projects/salesforce.png",
   technologies: [
-    "Shopify",
-    "Liquid",
-    "HTML/CSS",
-    "JavaScript",
-    "SEO",
+    "MongoDB",
+    "Express.js",
+    "React",
+    "Node.js",
+    "Railway",
+    "GoDaddy",
   ],
   href: "/projects",
 },
@@ -75,7 +76,7 @@ const experiences: Experience[] = [
     location: "Makati, Philippines",
     description:
       "Provided IT support through system development, network setup, administrative assistance, helpdesk support, and hardware and software troubleshooting.",
-    image: "/images/projects/it-support.png",
+    image: "/images/projects/ojt.jpg",
     technologies: [
       "IT Support",
       "Networking",
