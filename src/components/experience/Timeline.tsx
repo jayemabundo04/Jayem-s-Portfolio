@@ -9,7 +9,7 @@ type Experience = {
   statusType: "current" | "ojt" | "academic";
   company: string;
   companyMark: string;
-companyLogo?: string;
+  companyLogo?: string;
   role: string;
   location: string;
   description: string;
@@ -42,32 +42,32 @@ const experiences: Experience[] = [
     href: "/projects",
   },
   {
-  id: 2,
-  period: ["DEC 2025", "— PRESENT"],
-  duration: "9+ months",
-  status: "Project",
-  statusType: "current",
-  company: "Skyworth Philippines",
-  companyMark: "SP",
-  role: "Online Marketing & Web Support Assistant",
-  location: "Makati, Philippines",
-  description:
-    "Developed a full-stack MERN-based Salesforce system for managing internal business operations, workflows, and data through a centralized web application.",
-  image: "/images/projects/salesforce.png",
-  technologies: [
-    "MongoDB",
-    "Express.js",
-    "React",
-    "Node.js",
-    "Railway",
-    "GoDaddy",
-    "GitHub",
-    "Vercel",
-    "Vite",
-  ],
-  href: "/projects",
-},
-     {
+    id: 2,
+    period: ["DEC 2025", "— PRESENT"],
+    duration: "9+ months",
+    status: "Project",
+    statusType: "current",
+    company: "Skyworth Philippines",
+    companyMark: "SP",
+    role: "Online Marketing & Web Support Assistant",
+    location: "Makati, Philippines",
+    description:
+      "Developed a full-stack MERN-based Salesforce system for managing internal business operations, workflows, and data through a centralized web application.",
+    image: "/images/projects/salesforce.png",
+    technologies: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Railway",
+      "GoDaddy",
+      "GitHub",
+      "Vercel",
+      "Vite",
+    ],
+    href: "/projects",
+  },
+  {
     id: 3,
     period: ["AUG 2025", "— DEC 2025"],
     duration: "5 months",
@@ -103,7 +103,17 @@ const experiences: Experience[] = [
     description:
       "Developed a digital waste collection and scheduling platform for barangay residents. Added GPS tracking, SMS notifications, and management tools.",
     image: "/images/projects/waste-management.png",
-    technologies: ["MERN Stack", "Vercel","GitHub" "ESP32", "GPS", "SMS", "XAMPP", "Neo-M8N GPS module", "Arduino IDE"],
+    technologies: [
+      "MERN Stack",
+      "Vercel",
+      "GitHub",
+      "ESP32",
+      "GPS",
+      "SMS",
+      "XAMPP",
+      "Neo-M8N GPS module",
+      "Arduino IDE",
+    ],
     href: "/projects",
   },
 ];
@@ -158,20 +168,20 @@ export function Timeline() {
               <div className="journey-card__details">
                 <div className="journey-card__top">
                   <div
-  className={`journey-card__logo journey-card__logo--${experience.statusType}`}
->
-  {experience.companyLogo ? (
-    <Image
-      src={experience.companyLogo}
-      alt={`${experience.company} logo`}
-      width={38}
-      height={38}
-      className="journey-card__logo-image"
-    />
-  ) : (
-    <span aria-hidden="true">{experience.companyMark}</span>
-  )}
-</div>
+                    className={`journey-card__logo journey-card__logo--${experience.statusType}`}
+                  >
+                    {experience.companyLogo ? (
+                      <Image
+                        src={experience.companyLogo}
+                        alt={`${experience.company} logo`}
+                        width={38}
+                        height={38}
+                        className="journey-card__logo-image"
+                      />
+                    ) : (
+                      <span aria-hidden="true">{experience.companyMark}</span>
+                    )}
+                  </div>
 
                   <div className="journey-card__heading">
                     <div className="journey-card__company">
