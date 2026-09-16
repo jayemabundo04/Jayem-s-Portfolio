@@ -327,7 +327,7 @@ export function SkyworthCaseStudy() {
 
             <div className={styles.imageReveal}>
               <ScreenshotFrame
-                src="/images/projects/skyworth.png"
+                src="/images/projects/Store.png"
                 alt="Skyworth Philippines website home page with navigation and product lineup"
                 width={1920}
                 height={903}
