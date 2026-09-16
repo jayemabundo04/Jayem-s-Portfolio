@@ -450,7 +450,85 @@
   font-size: 0.68rem;
   font-weight: 900;
 }
+.websiteShowcase {
+  margin-top: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid var(--case-line);
+}
 
+.websiteShowcaseCopy {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+}
+.websiteShowcaseGallery {
+  grid-template-columns: 1fr;
+}
+.websiteShowcaseCopy h3 {
+  margin: 0.8rem 0 0;
+  color: #edf5ff;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.websiteShowcaseCopy > p {
+  max-width: 42rem;
+  margin: 0;
+  color: var(--case-muted);
+  line-height: 1.8;
+}
+
+.websiteShowcaseGallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.websiteShowcaseCard {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--case-line);
+  border-radius: 13px;
+  background: rgba(9, 27, 47, 0.72);
+}
+
+.websiteShowcaseImageWrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #071321;
+}
+
+.websiteShowcaseImage {
+  object-fit: cover;
+  transition: transform 400ms ease;
+}
+
+.websiteShowcaseCard:hover .websiteShowcaseImage {
+  transform: scale(1.025);
+}
+
+.websiteShowcaseCard figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.2rem 1.3rem;
+  border-top: 1px solid var(--case-line);
+}
+
+.websiteShowcaseCard figcaption strong {
+  color: #edf5ff;
+  font-size: 0.9rem;
+}
+
+.websiteShowcaseCard figcaption span {
+  color: #879bb5;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
 .opportunitySection {
   background:
     linear-gradient(90deg, rgba(4, 16, 30, 0.98), rgba(9, 29, 51, 0.9)),

@@ -20,7 +20,7 @@ const websiteWork = [
   },
   {
     title: "Interface and content",
-    items: ["HTML/CSS modifications", "JavaScript interactions", "Responsive layouts", "Product and content updates"],
+    items: ["HTML/CSS modifications", "JavaScript interactions", "Responsive layouts", "Product and content updates", " Shopify Applications"],
   },
   {
     title: "Visibility and upkeep",
@@ -318,9 +318,9 @@ export function SkyworthCaseStudy() {
               <div className={styles.sectionLead}>
                 <h3>Building and Maintaining the Shopify Experience</h3>
                 <p>
-                  Managed and customized the Skyworth Philippines Shopify website, working
-                  across theme sections, content, responsive layouts, SEO, and day-to-day
-                  website updates.
+                  Managed and customized the Skyworth Philippines Shopify website, 
+                  developing and maintaining theme sections, Store Locator features,
+                  content, responsive layouts, SEO, and day-to-day website updates.
                 </p>
               </div>
             </div>
@@ -351,6 +351,57 @@ export function SkyworthCaseStudy() {
                 </article>
               ))}
             </div>
+            <div className={styles.websiteShowcase}>
+  <div className={styles.websiteShowcaseCopy}>
+    <div>
+      <p className={styles.eyebrow}>Selected Website Work</p>
+
+      <h3>Responsive Shopify Execution</h3>
+    </div>
+
+    <p>
+      These examples show how I handled storefront content, page
+      presentation, and responsive website updates while keeping product
+      information clear and consistent across devices.
+    </p>
+  </div>
+
+  <div className={styles.websiteShowcaseGallery}>
+    <figure className={styles.websiteShowcaseCard}>
+      <div className={styles.websiteShowcaseImageWrap}>
+        <Image
+          src="/images/projects/skyworth-detail-01.png"
+          alt="Skyworth Philippines Shopify website page update"
+          fill
+          sizes="(max-width: 680px) 100vw, 50vw"
+          className={styles.websiteShowcaseImage}
+        />
+      </div>
+
+      <figcaption>
+        <strong>Desktop Storefront</strong>
+        <span>Product and campaign content presentation.</span>
+      </figcaption>
+    </figure>
+
+    <figure className={styles.websiteShowcaseCard}>
+      <div className={styles.websiteShowcaseImageWrap}>
+        <Image
+          src="/images/projects/skyworth-detail-02.png"
+          alt="Skyworth Philippines responsive storefront experience"
+          fill
+          sizes="(max-width: 680px) 100vw, 50vw"
+          className={styles.websiteShowcaseImage}
+        />
+      </div>
+
+      <figcaption>
+        <strong>Responsive Experience</strong>
+        <span>Website layout adapted across different screen sizes.</span>
+      </figcaption>
+    </figure>
+  </div>
+</div>
           </div>
         </section>
 
