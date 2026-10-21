@@ -1,4 +1,57 @@
+
+"use client";
+
+import { useState, type FormEvent } from "react";
+
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    if (status === "sending") return;
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      name: String(formData.get("name") ?? ""),
+      email: String(formData.get("email") ?? ""),
+      subject: String(formData.get("subject") ?? ""),
+      message: String(formData.get("message") ?? ""),
+    };
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Unable to send your message.");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    }
+  }
+
   return (
     <main className="bg-paper">
       <section className="border-b border-line py-20">
@@ -38,83 +91,78 @@ export default function ContactPage() {
               <div>
                 <p className="text-sm font-semibold text-ink">Email</p>
                 <p className="mt-1 text-slate-600">
-                  Your email address
+                  jayemabundo02@gmail.com
                 </p>
               </div>
 
               <div>
                 <p className="text-sm font-semibold text-ink">Location</p>
-                <p className="mt-1 text-slate-600">
-                  Philippines
-                </p>
+                <p className="mt-1 text-slate-600">Philippines</p>
               </div>
             </div>
           </div>
 
-          <form className="rounded-lg border border-line bg-white p-6 sm:p-8">
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-lg border border-line bg-white p-6 sm:p-8"
+          >
             <div className="grid gap-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="text-sm font-semibold text-ink"
-                >
+                <label htmlFor="name" className="text-sm font-semibold text-ink">
                   Name
                 </label>
-
                 <input
                   id="name"
                   name="name"
                   type="text"
+                  required
+                  maxLength={100}
+                  autoComplete="name"
                   placeholder="Your name"
                   className="mt-2 w-full rounded-md border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-moss"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="text-sm font-semibold text-ink"
-                >
+                <label htmlFor="email" className="text-sm font-semibold text-ink">
                   Email
                 </label>
-
                 <input
                   id="email"
                   name="email"
                   type="email"
+                  required
+                  maxLength={254}
+                  autoComplete="email"
                   placeholder="you@example.com"
                   className="mt-2 w-full rounded-md border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-moss"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="subject"
-                  className="text-sm font-semibold text-ink"
-                >
+                <label htmlFor="subject" className="text-sm font-semibold text-ink">
                   Subject
                 </label>
-
                 <input
                   id="subject"
                   name="subject"
                   type="text"
+                  required
+                  maxLength={150}
                   placeholder="What is this about?"
                   className="mt-2 w-full rounded-md border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-moss"
                 />
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="text-sm font-semibold text-ink"
-                >
+                <label htmlFor="message" className="text-sm font-semibold text-ink">
                   Message
                 </label>
-
                 <textarea
                   id="message"
                   name="message"
+                  required
+                  maxLength={5000}
                   rows={6}
                   placeholder="Write your message..."
                   className="mt-2 w-full resize-none rounded-md border border-line bg-paper px-4 py-3 text-sm text-ink outline-none transition focus:border-moss"
@@ -123,10 +171,23 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                disabled={status === "sending"}
+                className="rounded-md bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
               </button>
+
+              {status === "success" && (
+                <p role="status" className="text-sm text-green-700">
+                  Your message has been sent successfully!
+                </p>
+              )}
+
+              {status === "error" && (
+                <p role="alert" className="text-sm text-red-600">
+                  {errorMessage}
+                </p>
+              )}
             </div>
           </form>
         </div>
