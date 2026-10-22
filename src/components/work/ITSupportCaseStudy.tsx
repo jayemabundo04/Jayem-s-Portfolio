@@ -186,7 +186,7 @@ export function ITSupportCaseStudy() {
             </div>
            <div className={styles.systemVisual}>
   <Image
-    src="/images/projects/ojt3.jpg"
+    src="/images/projects/ojt2.jpg"
     alt="Employee Time-in and Time-out System"
     width={1200}
     height={800}
