@@ -184,19 +184,20 @@ export function ITSupportCaseStudy() {
                 <li><span aria-hidden="true">✓</span> Learned to consider real employee needs and usage</li>
               </ul>
             </div>
-            <div className={styles.systemVisual} aria-hidden="true">
-              <div className={styles.visualWindow}>
-                <div className={styles.windowTop}><i /><i /><i /><span>Employee Attendance</span></div>
-                <div className={styles.windowBody}>
-                  <div className={styles.windowEyebrow}>EMPLOYEE PORTAL</div>
-                  <div className={styles.windowTitle}>Daily attendance</div>
-                  <div className={styles.timeRow}><span>Time in</span><strong>08:00 AM</strong><b>Recorded</b></div>
-                  <div className={styles.timeRow}><span>Time out</span><strong>05:00 PM</strong><b>Recorded</b></div>
-                  <div className={styles.progressLine}><span /></div>
-                  <small>Illustrative interface concept</small>
-                </div>
-              </div>
-            </div>
+           <div className={styles.systemVisual}>
+  <Image
+    src="/images/projects/ojt3.jpg"
+    alt="Employee Time-in and Time-out System"
+    width={1200}
+    height={800}
+    style={{
+      width: "100%",
+      height: "auto",
+      borderRadius: "12px",
+      objectFit: "contain",
+    }}
+  />
+</div>
           </div>
         </div>
       </section>
