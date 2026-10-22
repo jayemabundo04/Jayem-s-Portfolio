@@ -13,6 +13,7 @@ const architecture = [
  {label:"Domain",value:"GoDaddy"},
  {label:"Version Control",value:"GitHub"},
 ];
+type ContributionIcon = "website" | "commerce" | "interface" | "search" | "system" | "support";
 const contributions: {title:string;icon:ContributionIcon}[] = [
  {title:"Full-Stack System Development",icon:"system"},
  {title:"Sell-Out Analytics & Reporting",icon:"interface"},
