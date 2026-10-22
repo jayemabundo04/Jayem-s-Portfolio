@@ -39,7 +39,7 @@ const experiences: Experience[] = [
       "JavaScript",
       "SEO",
     ],
-    href: "/work/skyworth#website-development",
+    href: "/work/skyworth-website",
   },
   {
   id: 2,
