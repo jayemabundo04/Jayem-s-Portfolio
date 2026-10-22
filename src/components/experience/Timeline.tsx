@@ -87,7 +87,7 @@ const experiences: Experience[] = [
       "Helpdesk",
       "System Development",
     ],
-    href: "/projects",
+    href: "/work/it-support-ojt",
   },
   {
     id: 4,
