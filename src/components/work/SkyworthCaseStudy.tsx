@@ -304,7 +304,11 @@ export function SkyworthCaseStudy() {
       </header>
 
       <div>
-        <section className={`${styles.section} ${styles.reveal}`} aria-labelledby="website-title">
+        <section
+  id="website-development"
+  className={`${styles.section} ${styles.reveal}`}
+  aria-labelledby="website-title"
+>
           <div className={styles.container}>
             <div className={`${styles.sectionHeadingGrid} ${styles.websiteHeadingGrid}`}>
               <div>
@@ -352,56 +356,67 @@ export function SkyworthCaseStudy() {
               ))}
             </div>
             <div className={styles.websiteShowcase}>
-  <div className={styles.websiteShowcaseCopy}>
-    <div>
-      <p className={styles.eyebrow}>Selected Website Work</p>
+              <div className={styles.websiteShowcaseCopy}>
+                <div>
+                  <p className={styles.eyebrow}>Selected Website Work</p>
+                  <h3>Responsive Shopify Execution</h3>
+                </div>
 
-      <h3>Responsive Shopify Execution</h3>
-    </div>
+                <p>
+                  These examples show how I handled storefront content, page
+                  presentation, and website updates while keeping product
+                  information clear and consistent across devices.
+                </p>
+              </div>
 
-    <p>
-      These examples show how I handled storefront content, page
-      presentation, and responsive website updates while keeping product
-      information clear and consistent across devices.
-    </p>
-  </div>
+              <div className={styles.websiteShowcaseGallery}>
+                {/* 01 — Shopify Website Page Update */}
+                <figure className={styles.websiteShowcaseCard}>
+                  <div className={styles.websiteShowcaseImageWrap}>
+                    <Image
+                      src="/images/projects/Skyfont.jpg"
+                      alt="Skyworth Philippines Shopify website page update"
+                      fill
+                      sizes="(max-width: 680px) 100vw, 50vw"
+                      className={styles.websiteShowcaseImage}
+                    />
+                  </div>
 
-  <div className={styles.websiteShowcaseGallery}>
-    <figure className={styles.websiteShowcaseCard}>
-      <div className={styles.websiteShowcaseImageWrap}>
-        <Image
-          src="/images/projects/skyworth-detail-01.png"
-          alt="Skyworth Philippines Shopify website page update"
-          fill
-          sizes="(max-width: 680px) 100vw, 50vw"
-          className={styles.websiteShowcaseImage}
-        />
-      </div>
+                  <figcaption>
+                    <span className={styles.websiteShowcaseIndex}>
+                      01 / WEBSITE UPDATE
+                    </span>
+                    <strong>Shopify Website Page Update</strong>
+                    <span>
+                      Shopify theme updates, storefront content, and product presentation.
+                    </span>
+                  </figcaption>
+                </figure>
 
-      <figcaption>
-        <strong>Desktop Storefront</strong>
-        <span>Product and campaign content presentation.</span>
-      </figcaption>
-    </figure>
+                {/* 02 — Interactive Storefront */}
+                <figure className={styles.websiteShowcaseCard}>
+                  <div className={styles.websiteShowcaseImageWrap}>
+                    <Image
+                      src="/images/projects/interactive.jpg"
+                      alt="Skyworth Philippines interactive storefront"
+                      fill
+                      sizes="(max-width: 680px) 100vw, 50vw"
+                      className={styles.websiteShowcaseImage}
+                    />
+                  </div>
 
-    <figure className={styles.websiteShowcaseCard}>
-      <div className={styles.websiteShowcaseImageWrap}>
-        <Image
-          src="/images/projects/skyworth-detail-02.png"
-          alt="Skyworth Philippines responsive storefront experience"
-          fill
-          sizes="(max-width: 680px) 100vw, 50vw"
-          className={styles.websiteShowcaseImage}
-        />
-      </div>
-
-      <figcaption>
-        <strong>Responsive Experience</strong>
-        <span>Website layout adapted across different screen sizes.</span>
-      </figcaption>
-    </figure>
-  </div>
-</div>
+                  <figcaption>
+                    <span className={styles.websiteShowcaseIndex}>
+                      02 / INTERACTIVE STOREFRONT
+                    </span>
+                    <strong>Interactive Storefront</strong>
+                    <span>
+                      Storefront navigation, product browsing, and interactive page elements.
+                    </span>
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -450,7 +465,11 @@ export function SkyworthCaseStudy() {
           </div>
         </section>
 
-        <section className={`${styles.section} ${styles.reveal}`} aria-labelledby="system-title">
+        <section
+  id="salesforce-system"
+  className={`${styles.section} ${styles.reveal}`}
+  aria-labelledby="system-title"
+>
           <div className={styles.container}>
             <div className={styles.systemIntro}>
               <div>

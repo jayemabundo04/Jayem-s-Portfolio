@@ -39,7 +39,7 @@ const experiences: Experience[] = [
       "JavaScript",
       "SEO",
     ],
-    href: "/work/skyworth",
+    href: "/work/skyworth#website-development",
   },
   {
   id: 2,
@@ -65,7 +65,7 @@ const experiences: Experience[] = [
     "Vercel",
     "Vite",
   ],
-  href: "/projects",
+ href: "/work/skyworth#salesforce-system",
 },
      {
     id: 3,
