@@ -3,17 +3,17 @@ import type { Metadata } from "next";
 import { SkyworthCaseStudy } from "@/components/work/SkyworthCaseStudy";
 
 export const metadata: Metadata = {
-  title: "Skyworth Philippines Case Study",
+  title: "Skyworth Philippines Shopify Website Case Study",
   description:
-    "A case study covering Jay-Em's Shopify website management, SEO, digital support, and full-stack system development work for Skyworth Philippines.",
+    "Shopify storefront management, theme customization, responsive website updates, e-commerce content, and SEO support for Skyworth Philippines.",
   alternates: {
-    canonical: "/work/skyworth",
+    canonical: "/work/skyworth-website",
   },
   openGraph: {
     title: "Skyworth Philippines Case Study | Jay-Em's Portfolio",
     description:
-      "Shopify website management, web support, SEO, and internal full-stack system development for Skyworth Philippines.",
-    url: "/work/skyworth",
+      "Shopify website management, storefront updates, responsive layouts, and SEO support.",
+    url: "/work/skyworth-website",
     type: "article",
     images: [
       {
