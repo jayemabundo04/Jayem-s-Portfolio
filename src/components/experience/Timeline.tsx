@@ -65,7 +65,7 @@ const experiences: Experience[] = [
     "Vercel",
     "Vite",
   ],
- href: "/work/skyworth#salesforce-system",
+ href: "/work/salesforce-system",
 },
      {
     id: 3,
