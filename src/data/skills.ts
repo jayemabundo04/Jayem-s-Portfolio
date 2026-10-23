@@ -48,7 +48,7 @@ export const skills: Skill[] = [
   {
     id: "mysql",
     name: "MySQL",
-    icon: "/images/icon/MySQL.png  ",
+    icon: "/images/icon/MySQL.png",
   },
   {
     id: "nextjs",
