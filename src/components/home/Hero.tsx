@@ -1,45 +1,253 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import { ButtonLink } from "@/components/ui/Button";
 import { socialLinks } from "@/data/social-links";
 
+const stats = [
+  {
+    icon: "/images/icon/progcon.png",
+    value: "5+",
+    label: "Projects Completed",
+  },
+  {
+    icon: "/images/icon/exp.png",
+    value: "1+",
+    label: "Years Experience",
+  },
+  {
+    icon: "/images/icon/course.png",
+    value: "BIT",
+    label: "Computer Technology",
+  },
+  {
+    icon: "/images/icon/learn.png",
+    value: "Ongoing",
+    label: "Always Learning",
+  },
+];
+
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const revealFrameRef = useRef<number | null>(null);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (revealFrameRef.current !== null) {
+          window.cancelAnimationFrame(revealFrameRef.current);
+          revealFrameRef.current = null;
+        }
+
+        if (!entry.isIntersecting) {
+          setIsHeroVisible(false);
+          return;
+        }
+
+        revealFrameRef.current = window.requestAnimationFrame(() => {
+          revealFrameRef.current = window.requestAnimationFrame(() => {
+            setIsHeroVisible(true);
+            revealFrameRef.current = null;
+          });
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -8% 0px",
+      }
+    );
+
+    observer.observe(hero);
+
+    return () => {
+      observer.disconnect();
+
+      if (revealFrameRef.current !== null) {
+        window.cancelAnimationFrame(revealFrameRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="jp-home jp-hero" aria-labelledby="portfolio-heading">
-      <div className="jp-grid" aria-hidden="true" />
-      <div className="jp-container jp-hero-inner">
-        <div style={{ position: "relative", zIndex: 2 }}>
-          <p className="jp-eyebrow"><span className="jp-dot" /> Portfolio / 2026 — Full Stack Developer</p>
-          <h1 id="portfolio-heading" className="jp-title">
-            <span>Design.</span>
-            <span className="jp-outline">Develop.</span>
-            <span className="jp-lime">Deliver.</span>
-          </h1>
-          <p className="jp-intro">
-            Hi, I&apos;m Jose Martin C. Abundo Jr. I build thoughtful digital
-            experiences, from polished interfaces to dependable full-stack
-            systems. Made with purpose, built for people.
-          </p>
-          <div className="jp-actions">
-            <Link href="#work-preview" className="jp-button jp-button-primary">Explore selected work <span aria-hidden="true">↗</span></Link>
-            <Link href="/contact" className="jp-button jp-button-secondary">Let&apos;s talk <span aria-hidden="true">↗</span></Link>
+    <section
+      ref={heroRef}
+      data-visible={isHeroVisible ? "true" : "false"}
+      className="hero-section relative isolate min-h-[calc(100svh-4rem)] overflow-hidden border-b border-white/5 bg-[#05070d] text-white"
+    >
+      {/* Background */}
+     {/* Background */}
+<div
+  className="pointer-events-none absolute inset-0 -z-10"
+  aria-hidden="true"
+>
+  <Image
+    src="/images/projects/home.png"
+    alt=""
+    fill
+    priority
+    sizes="100vw"
+    className="object-cover object-center"
+  />
+
+  {/* Dark overlay for text readability */}
+  <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,7,13,0.96)_0%,rgba(5,7,13,0.82)_32%,rgba(5,7,13,0.42)_68%,rgba(5,7,13,0.68)_100%)]" />
+
+  <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(5,7,13,0.92)_0%,transparent_45%,rgba(5,7,13,0.25)_100%)]" />
+</div>
+
+      {/* Main Container */}
+      <div className="mx-auto flex min-h-[calc(100svh-4rem)] w-full max-w-7xl items-center px-5 py-12 sm:px-8 lg:px-10">
+        <div className="grid w-full items-end gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          {/* LEFT SIDE */}
+          <div className="relative z-10 max-w-3xl">
+            {/* Role */}
+            <div className="hero-reveal hero-reveal-1 mb-5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-violet-300">
+              <span className="h-2 w-2 rounded-full bg-violet-400 shadow-[0_0_16px_rgba(167,139,250,0.9)]" />
+              Full Stack Web Developer
+            </div>
+
+            {/* Heading */}
+            <h1 className="hero-heading text-4xl font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.4rem]">
+              <span className="hero-heading-part hero-heading-part-1">
+                I build web experiences
+              </span>
+              <br className="hidden sm:block" />{" "}
+              <span className="hero-heading-part hero-heading-part-2">
+                that
+              </span>{" "}
+              <span className="hero-heading-part hero-heading-part-3 bg-gradient-to-r from-violet-400 via-indigo-400 to-blue-400 bg-clip-text text-transparent">
+                solve real problems.
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="hero-description-reveal mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
+              I&apos;m Jose Martin C. Abundo Jr., a Computer Technology graduate
+              focused on building clean, responsive, and user-friendly web
+              applications.
+            </p>
+
+            {/* CTA Buttons */}
+            <div className="hero-reveal hero-reveal-4 mt-8 flex flex-wrap gap-3">
+              <ButtonLink
+                href="#work-preview"
+                variant="inverse"
+                className="border-0 bg-gradient-to-r from-indigo-500 to-violet-600 px-6 text-white shadow-[0_12px_35px_rgba(99,102,241,0.3)] hover:from-indigo-400 hover:to-violet-500"
+              >
+                View My Work
+                <span aria-hidden="true" className="ml-2">
+                  ↗
+                </span>
+              </ButtonLink>
+
+              <ButtonLink
+                href="#contact-preview"
+                variant="inverseOutline"
+                className="border-white/15 bg-white/[0.03] px-6 text-slate-200 backdrop-blur-sm hover:border-violet-400/50 hover:bg-violet-500/10 hover:text-white"
+              >
+                Get In Touch
+                <span aria-hidden="true" className="ml-2">
+                  →
+                </span>
+              </ButtonLink>
+            </div>
+
+            {/* Social Links */}
+            <div className="hero-reveal hero-reveal-5 mt-7 flex items-center gap-2">
+              {socialLinks.map((link) => (
+                <Link
+                  href={link.href}
+                  key={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={link.label}
+                  className="flex h-8 min-w-8 items-center justify-center rounded-md border border-white/10 bg-white/[0.03] px-2 text-[11px] font-semibold text-slate-400 transition hover:border-violet-400/40 hover:text-white"
+                >
+                  {link.label === "GitHub" ? "GH" : "in"}
+                </Link>
+              ))}
+            </div>
+
+            {/* Stats */}
+            <div className="hero-reveal hero-reveal-6 mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-lg border border-white/10 bg-[#0b0f18]/60 px-3 py-3 backdrop-blur-md"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <Image
+                      src={stat.icon}
+                      alt=""
+                      width={34}
+                      height={34}
+                      className="h-8 w-8 object-contain"
+                    />
+
+                    <div>
+                      <p className="text-base font-semibold text-white">
+                        {stat.value}
+                      </p>
+                      <p className="mt-0.5 text-[9px] leading-3 text-slate-500">
+                        {stat.label}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="jp-meta">
-            <span>Based in the Philippines</span>
-            <span aria-hidden="true">/</span>
-            {socialLinks.map(link => (
-              <Link key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} ↗</Link>
-            ))}
+
+          {/* RIGHT SIDE */}
+          <div className="relative z-10 flex w-full justify-center lg:justify-end">
+            <div className="relative w-full max-w-[42rem]">
+              {/* Profile Glow */}
+              <div
+                className="hero-profile-glow absolute left-1/2 top-[-4rem] h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-600/60 via-indigo-600/40 to-blue-500/20 blur-3xl"
+                aria-hidden="true"
+              />
+
+              <div
+                className="hero-profile-glow absolute left-1/2 top-[-2rem] h-[18rem] w-[18rem] -translate-x-1/2 rounded-full bg-gradient-to-br from-violet-500/30 via-indigo-500/20 to-transparent blur-2xl"
+                aria-hidden="true"
+              />
+
+              {/* Profile */}
+              <div className="hero-profile-reveal relative z-20 mx-auto mb-2 h-[27rem] w-[22rem] sm:mb-3 sm:h-[30rem] sm:w-[24rem]">
+                <div className="hero-profile-float relative h-full w-full">
+                  <Image
+                    src="/images/icon/profile.png"
+                    alt="Jose Martin C. Abundo Jr."
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 24rem, 27rem"
+                    className="object-contain object-bottom"
+                  />
+                </div>
+              </div>
+
+              {/* Tech Stack Image */}
+              <div className="hero-tech-reveal relative z-10">
+                <Image
+                  src="/images/projects/techus.png"
+                  alt="Technology stack: Next.js, React, TypeScript, Tailwind CSS, PostgreSQL, and Prisma"
+                  width={758}
+                  height={137}
+                  sizes="(max-width: 1024px) 100vw, 42rem"
+                  className="h-auto w-full object-contain"
+                />
+              </div>
+            </div>
           </div>
         </div>
-        <div className="jp-profile-wrap">
-          <div className="jp-orbit" aria-hidden="true" />
-          <div className="jp-profile">
-            <Image src="/images/icon/profile.png" alt="Portrait of Jose Martin C. Abundo Jr." fill priority sizes="(max-width: 1000px) 90vw, 40vw" />
-          </div>
-          <div className="jp-visual-tag">Creative mind.<br />Technical craft.</div>
-        </div>
-        <span className="jp-bottom-label">Scroll to discover ↓</span>
-        <span className="jp-bottom-index">01 / Introduction</span>
       </div>
     </section>
   );
