@@ -1,46 +1,24 @@
 import Link from "next/link";
-
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { navigationItems } from "@/data/navigation";
 import { socialLinks } from "@/data/social-links";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link
-          className="rounded-md text-base font-bold text-ink transition hover:text-moss focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-moss"
-          href="/"
-        >
-          Jay-Em
+    <header className="sticky top-0 z-40 border-b border-[#ffffff20] bg-[#0b0d0c]/95 text-[#f4f2e9] backdrop-blur-xl">
+      <div className="mx-auto flex min-h-[76px] w-full max-w-[1380px] items-center justify-between px-5 sm:px-8 lg:px-11">
+        <Link className="text-xl font-black tracking-[-0.06em] text-[#f4f2e9] transition hover:text-[#d6ff73]" href="/" aria-label="Jay-Em home">
+          JAY—EM<span className="text-[#d6ff73]">.</span>
         </Link>
-
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
-          {navigationItems.map((item) => (
-            <Link
-              className="rounded-md px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-white hover:text-moss focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss"
-              href={item.href}
-              key={item.href}
-            >
-              {item.label}
-            </Link>
+          {navigationItems.map(item => (
+            <Link className="rounded-sm px-3 py-2 text-xs font-semibold uppercase tracking-[.11em] text-[#aab9ad] transition hover:text-[#d6ff73] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d6ff73]" href={item.href} key={item.href}>{item.label}</Link>
           ))}
         </nav>
-
         <div className="hidden items-center gap-2 md:flex">
-          {socialLinks.map((link) => (
-            <Link
-              className="rounded-md border border-line bg-white px-3 py-2 text-sm font-semibold text-ink transition hover:border-moss hover:text-moss focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-moss"
-              href={link.href}
-              key={link.href}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {socialLinks.slice(0,1).map(link => <Link key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#e7ede4] hover:text-[#d6ff73]">{link.label} ↗</Link>)}
+          <Link href="/contact" className="ml-3 rounded-sm bg-[#d6ff73] px-5 py-3 text-xs font-bold text-[#0b0d0c] transition hover:bg-white">Let&apos;s talk ↗</Link>
         </div>
-
         <MobileMenu />
       </div>
     </header>
