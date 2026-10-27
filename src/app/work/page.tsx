@@ -146,7 +146,7 @@ export default function WorkPage() {
 
           <figure className="award-image-wrapper">
             <Image
-              src="/images/certificates/competition.jpg"
+              src="/images/projects/competition.jpg"
               alt="Certificate of Recognition for winning 3rd Prize in the Skyworth Global AI Competition Marketing Track"
               width={1450}
               height={1024}
