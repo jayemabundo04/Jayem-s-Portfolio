@@ -130,7 +130,7 @@ export function Hero() {
 
             {/* Description */}
             <p className="hero-description-reveal mt-6 max-w-2xl text-sm leading-7 text-slate-300 sm:text-base">
-              I&apos;m I'm Jose Martin C. Abundo Jr., a Bachelor of Industrial Technology graduate majoring in Computer Technology. My skills span web development, programming, computer hardware assembly and troubleshooting, networking, and embedded systems. I'm passionate about building innovative, responsive, and user-friendly digital solutions.
+              I&apos;m Jose Martin C. Abundo Jr., a Bachelor of Industrial Technology graduate majoring in Computer Technology. My skills span web development, programming, computer hardware assembly and troubleshooting, networking, and embedded systems. I'm passionate about building innovative, responsive, and user-friendly digital solutions.
             </p>
 
             {/* CTA Buttons */}
