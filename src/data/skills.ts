@@ -60,16 +60,28 @@ export const skills: Skill[] = [
     name: "Node.js",
     icon: "/images/icon/nodejs.png",
   },
+  
   {
     id: "postgresql",
     name: "PostgreSQL",
     icon: "/images/icon/PostgresSQL.png",
   },
   {
+    id: "payload",
+    name: "Payload CMS",
+    icon: "/images/icon/payload.png",
+  },
+  {
+    id: "shopify",
+    name: "Shopify",
+    icon: "/images/icon/shopify.png",
+  },
+  {
     id: "react",
     name: "React",
     icon: "/images/icon/react.png",
   },
+
   {
     id: "tailwindcss",
     name: "Tailwind CSS",
